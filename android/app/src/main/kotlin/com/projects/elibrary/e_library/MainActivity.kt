@@ -1,4 +1,4 @@
-package com.projects.elibrary.e_library
+package com.projects.elibrary
 
 import io.flutter.embedding.android.FlutterActivity
 
