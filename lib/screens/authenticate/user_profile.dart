@@ -1,4 +1,4 @@
-import 'package:e_library/screens/home/home.dart';
+import 'package:e_library/screens/wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:e_library/models/user.dart';
 import 'package:e_library/services/database.dart';
@@ -26,12 +26,12 @@ class _UserProfileState extends State<UserProfile> {
   @override
   Widget build(BuildContext context) {
 
-    final user = Provider.of<UserModel>(context);
+    final user = Provider.of<UserModel?>(context);
 
     return Scaffold(
       body: SafeArea(
         child: StreamBuilder(
-            stream: DatabaseService(uid: user.uid).userData,
+            stream: DatabaseService(uid: user!.uid).userData,
             builder: (context, snapshot) {
               if(snapshot.hasData) {
                 UserData? userData = snapshot.data;
@@ -93,7 +93,7 @@ class _UserProfileState extends State<UserProfile> {
                                     _currentGender ?? userData!.gender,
                                     _currentClasses ?? userData!.classes
                                 );
-                                if (context.mounted) Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Home()));
+                                if (context.mounted) Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Wrapper()));
                               }
                             },
                             child: const Text(
