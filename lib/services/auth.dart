@@ -49,7 +49,7 @@ class AuthService {
       User? user = result.user;
 
       // create a new document for the user with uid for profile
-      await DatabaseService(uid: user!.uid).updateUserData('New user', '', '');
+      await DatabaseService(uid: user!.uid).updateUserData('New user', '', '', 'https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?w=740&t=st=1681009434~exp=1681010034~hmac=e69ca75338acbc3a3e8e79962d16ebafca18f1982274dd695b480ebe19c083de');
 
       return _userFromFirebaseUser(user);
     }catch(e){

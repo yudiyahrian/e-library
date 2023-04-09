@@ -1,10 +1,12 @@
-import 'package:e_library/screens/wrapper.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:e_library/models/user.dart';
 import 'package:e_library/services/database.dart';
 import 'package:e_library/shared/loading.dart';
 import 'package:e_library/shared/constants.dart';
 import 'package:provider/provider.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 class UserProfile extends StatefulWidget {
   const UserProfile({Key? key}) : super(key: key);
@@ -22,6 +24,37 @@ class _UserProfileState extends State<UserProfile> {
   String? _currentName;
   String? _currentGender;
   String? _currentClasses;
+  File? image;
+  String? downloadURL;
+  bool isLoading = false;
+
+  selectImageFromGallery() async
+  {
+    final picker = ImagePicker();
+    final imageFile = await picker.pickImage(source: ImageSource.gallery);
+    if(imageFile != null)
+    {
+      setState(() {
+        image = File(imageFile.path);
+      });
+    }
+  }
+
+  Future<String?> uploadFile(File image) async
+  {
+    String postId=DateTime.now().millisecondsSinceEpoch.toString();
+    Reference ref = FirebaseStorage.instance.ref().child("profile-images").child("post_$postId.jpg");
+    await ref.putFile(image);
+    downloadURL = await ref.getDownloadURL();
+    return downloadURL;
+  }
+
+  uploadToFirebase(image) async
+  {
+    await uploadFile(image).then((value) {
+      setState(() {});
+    }); // this will upload the file and store url in the variable 'url'
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +73,26 @@ class _UserProfileState extends State<UserProfile> {
                     child: Column(
                       children: [
                         const Text(
-                          'Update your brew settings.',
+                          'Update your user settings.',
                           style: TextStyle(fontSize: 18),
+                        ),
+                        const SizedBox(height: 20),
+                        GestureDetector(
+                          onTap: selectImageFromGallery,
+                          child: Container(
+                            width: 120,
+                            height: 120,
+                            alignment: Alignment.center,
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                              color: Colors.blue
+                            ),
+                            child: Center(
+                              child: image != null
+                                  ? Image.file(image!)
+                                  : Image.network(userData!.imageUrl)
+                            ),
+                          ),
                         ),
                         const SizedBox(height: 20),
                         TextFormField(
@@ -87,13 +138,16 @@ class _UserProfileState extends State<UserProfile> {
                                 backgroundColor: Colors.pink[400]
                             ),
                             onPressed: () async {
+                              if(image != null ) uploadToFirebase(image);
                               if(_formKey.currentState!.validate()) {
                                 await DatabaseService(uid: user.uid).updateUserData(
                                     _currentName ?? userData!.name,
                                     _currentGender ?? userData!.gender,
-                                    _currentClasses ?? userData!.classes
+                                    _currentClasses ?? userData!.classes,
+                                    downloadURL ?? userData!.imageUrl
                                 );
-                                if (context.mounted) Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Wrapper()));
+                                // if (context.mounted) Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Wrapper()));
+                                // if (context.mounted) Navigator.pop(context);
                               }
                             },
                             child: const Text(
@@ -105,7 +159,7 @@ class _UserProfileState extends State<UserProfile> {
                     )
                 );
               } else {
-                return Loading();
+                return const Loading();
               }
             }
         ),
