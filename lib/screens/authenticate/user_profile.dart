@@ -18,8 +18,8 @@ class UserProfile extends StatefulWidget {
 class _UserProfileState extends State<UserProfile> {
 
   final _formKey = GlobalKey<FormState>();
-  final List<String> genders = ['Man', 'Woman'];
-  final List<String> classes = ['XI PPLG 1', 'XI PPLG 2'];
+  final List<String> genders = ['None','Man', 'Woman'];
+  final List<String> classes = ['None','XI PPLG 1', 'XI PPLG 2'];
 
   String? _currentName;
   String? _currentGender;
@@ -138,7 +138,7 @@ class _UserProfileState extends State<UserProfile> {
                                 backgroundColor: Colors.pink[400]
                             ),
                             onPressed: () async {
-                              if(image != null ) uploadToFirebase(image);
+                              if(image != null ) await uploadToFirebase(image);
                               if(_formKey.currentState!.validate()) {
                                 await DatabaseService(uid: user.uid).updateUserData(
                                     _currentName ?? userData!.name,
@@ -146,6 +146,9 @@ class _UserProfileState extends State<UserProfile> {
                                     _currentClasses ?? userData!.classes,
                                     downloadURL ?? userData!.imageUrl
                                 );
+                                setState(() {
+                                  image = null;
+                                });
                                 // if (context.mounted) Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Wrapper()));
                                 // if (context.mounted) Navigator.pop(context);
                               }
