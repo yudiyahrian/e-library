@@ -9,6 +9,7 @@ class UserData {
   final String name;
   final String gender;
   final String classes;
+  final String imageUrl;
 
-  UserData({required this.uid, required this.name, required this.gender, required this.classes});
+  UserData({required this.uid, required this.name, required this.gender, required this.classes, required this.imageUrl});
 }

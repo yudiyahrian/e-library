@@ -1,3 +1,4 @@
+import 'package:e_library/screens/authenticate/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:e_library/services/auth.dart';
 
@@ -16,18 +17,35 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blue,
-      child: TextButton.icon(
-        onPressed: () async{
-          await _auth.signOut();
-        },
-        icon: const Icon(
-          Icons.person,
-          color: Colors.black,
-        ),
-        label: const Text(
-          'Logout',
-          style: TextStyle(color: Colors.black),
-        ),
+      child: Column(
+        children: [
+          TextButton.icon(
+            onPressed: () async{
+              await _auth.signOut();
+            },
+            icon: const Icon(
+              Icons.person,
+              color: Colors.black,
+            ),
+            label: const Text(
+              'Logout',
+              style: TextStyle(color: Colors.black),
+            ),
+          ),
+          TextButton.icon(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const UserProfile()));
+            },
+            icon: const Icon(
+              Icons.person,
+              color: Colors.black,
+            ),
+            label: const Text(
+              'Edit user',
+              style: TextStyle(color: Colors.black),
+            ),
+          ),
+        ],
       ),
     );
   }

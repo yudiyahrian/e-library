@@ -1,8 +1,8 @@
 import 'package:e_library/models/user.dart';
-import 'package:e_library/screens/authenticate/authenticate.dart';
 import 'package:e_library/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'authenticate/authenticate.dart';
 
 
 class Wrapper extends StatelessWidget {
@@ -17,7 +17,7 @@ class Wrapper extends StatelessWidget {
     if (user == null) {
       return const Authenticate();
     }else {
-      return Home();
+      return const Home();
     }
   }
 }
