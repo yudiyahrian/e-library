@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 InputDecoration textInputDecoration = InputDecoration(
-  fillColor: Colors.white,
+  isDense: true,
+  fillColor: Colors.transparent,
   filled: true,
   enabledBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: Color(0XFFD3D3D3), width: 2.0),
+      borderSide: const BorderSide(color: Color(0XFFD3D3D3), width: 1),
       borderRadius: BorderRadius.circular(50),
   ),
   focusedBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: Color(0XFF01B58A), width: 2.0),
+      borderSide: const BorderSide(color: Color(0XFF01B58A), width: 1),
       borderRadius: BorderRadius.circular(50),
   ),
-  contentPadding: const EdgeInsets.all(20)
 );

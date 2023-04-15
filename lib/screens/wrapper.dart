@@ -1,8 +1,10 @@
 import 'package:e_library/models/user.dart';
+import 'package:e_library/screens/authenticate/setup_profile.dart';
 import 'package:e_library/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'authenticate/authenticate.dart';
+import 'package:e_library/services/database.dart';
 
 
 class Wrapper extends StatelessWidget {
@@ -17,7 +19,16 @@ class Wrapper extends StatelessWidget {
     if (user == null) {
       return const Authenticate();
     }else {
-      return const Home();
+      final check = DatabaseService(uid: user.uid).userData;
+      return StreamBuilder<UserData>(
+          stream: check,
+          builder: (context, snapshot) {
+            if (snapshot.hasData && snapshot.data!.name == 'New user') {
+              return const Home();
+            } else {
+              return const SetupProfile();
+            }
+          });
     }
   }
 }

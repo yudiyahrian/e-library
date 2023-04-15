@@ -1,4 +1,3 @@
-import 'package:e_library/screens/authenticate/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:e_library/services/auth.dart';
 
@@ -34,7 +33,7 @@ class _HomeState extends State<Home> {
           ),
           TextButton.icon(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const UserProfile()));
+              // Navigator.push(context, MaterialPageRoute(builder: (context) => const UserProfile()));
             },
             icon: const Icon(
               Icons.person,
