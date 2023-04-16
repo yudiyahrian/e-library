@@ -1,4 +1,4 @@
-import 'package:e_library/screens/authenticate/onboard_first.dart';
+import 'package:e_library/screens/setup/setup.dart';
 import 'package:e_library/shared/colors.dart';
 import 'package:e_library/shared/loading.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -504,10 +504,10 @@ class _SetupProfileState extends State<SetupProfile> {
                                             _currentMajors ?? userData!.majors,
                                             _currentPhoneNumber ?? userData!.phoneNumber
                                           );
-                                          setState(() {
-                                            image = null;
-                                          });
-                                          if (context.mounted) Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const OnboardFirst()));
+                                          // setState(() {
+                                          //   image = null;
+                                          // });
+                                          if (context.mounted) Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Setup()));
                                           // if (context.mounted) Navigator.pop(context);
                                           }
                                         },

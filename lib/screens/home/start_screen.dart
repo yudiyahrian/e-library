@@ -1,14 +1,6 @@
-import 'package:e_library/screens/home/home.dart';
+import 'package:e_library/screens/authenticate/authenticate.dart';
 import 'package:flutter/material.dart';
 import 'package:e_library/shared/colors.dart';
-
-void main() {
-  runApp(
-      const MaterialApp(
-        home: StartScreen(),
-      )
-  );
-}
 
 class StartScreen extends StatelessWidget {
   const StartScreen({Key? key}) : super(key: key);
@@ -159,8 +151,8 @@ class StartScreen extends StatelessWidget {
                               backgroundColor: MaterialStateProperty.all(const Color(0XFF01B58A))
                           ),
                           onPressed: () {
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                              return const Home();
+                            Navigator.push(context, MaterialPageRoute(builder: (context) {
+                              return const Authenticate();
                             }));
                           },
                           child: Row(

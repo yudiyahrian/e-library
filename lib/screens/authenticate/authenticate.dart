@@ -217,6 +217,7 @@ class _AuthenticateState extends State<Authenticate> {
                                   });
                                 }
                               }
+                              if(context.mounted) Navigator.pop(context);
                             },
                             child: const Text(
                               'Continue',
