@@ -1,6 +1,5 @@
-import 'package:drop_shadow_image/drop_shadow_image.dart';
+import 'package:e_library/shared/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:e_library/shared/constants.dart';
 import 'package:e_library/shared/loading.dart';
 import 'package:e_library/services/auth.dart';
@@ -27,7 +26,7 @@ class _AuthenticateState extends State<Authenticate> {
   Widget build(BuildContext context) {
     return loading ? const Loading() : Material(
       child: Container(
-        color: Colors.white,
+        color: bgOnBoard,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -36,12 +35,7 @@ class _AuthenticateState extends State<Authenticate> {
               children: [
                 Padding(
                     padding: const EdgeInsets.only(right: 10),
-                    child: DropShadowImage(
-                      image: Image.asset('assets/Icon-E-Library-TB2.png', height: 80, width: 80,),
-                      offset: const Offset(5,4),
-                      scale: 0.9,
-                      blurRadius: 5,
-                    )
+                    child: Image.asset('assets/New-Icon.png', height: 55, width: 55,),
                 ),
                 const Text(
                   'E-St',
@@ -49,24 +43,19 @@ class _AuthenticateState extends State<Authenticate> {
                       fontSize: 38,
                       fontFamily: 'Quick Sand',
                       fontWeight: FontWeight.w700,
-                      color: Color(0XFF01B58A),
+                      color: btnColor,
                       decoration: TextDecoration.none
                   ),
                 ),
-                GradientText(
+                const Text(
                     'arby',
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontSize: 38,
                         fontFamily: 'Quick Sand',
                         fontWeight: FontWeight.w700,
-                        decoration: TextDecoration.none
+                        decoration: TextDecoration.none,
+                        color: whiteColor
                     ),
-                    gradientType: GradientType.linear,
-                    gradientDirection: GradientDirection.ttb,
-                    colors: const [
-                      Color(0XFF0B1617),
-                      Color(0XFF335F5C)
-                    ]
                 )
               ],
             ),
@@ -80,7 +69,7 @@ class _AuthenticateState extends State<Authenticate> {
                       fontSize: 18,
                       fontFamily: 'Quick Sand',
                       fontWeight: FontWeight.w600,
-                      color: Colors.black,
+                      color: whiteColor,
                       decoration: TextDecoration.none
                   ),
                 ),
@@ -100,8 +89,9 @@ class _AuthenticateState extends State<Authenticate> {
                             'Your email address',
                             style: TextStyle(
                                 fontFamily: 'Quick Sand',
-                                fontWeight: FontWeight.w800,
-                                fontSize: 18
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                                color: whiteColor
                             ),
                           ),
                         ),
@@ -110,14 +100,32 @@ class _AuthenticateState extends State<Authenticate> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 50),
                       child: TextFormField(
-                        decoration: textInputDecoration.copyWith(hintText: 'starbhak@gmail.com', prefixIcon: const Padding(
-                          padding: EdgeInsets.only(left: 20, right: 10),
-                          child: Icon(Icons.mail, size: 30),
+                        style: TextStyle(color: Colors.white),
+                        decoration: textInputDecoration.copyWith(hintText: 'starbhak@gmail.com', prefixIcon: Padding(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const Icon(Icons.mail, size: 30),
+                              Container(
+                                margin: EdgeInsets.symmetric(horizontal: 10),
+                                width: 2,
+                                height: 25,
+                                color: greyTransColor,
+                              )
+                            ],
+                          ),
                         ),
                             prefixIconColor: MaterialStateColor.resolveWith((states) =>
                             states.contains(MaterialState.focused)
-                                ? const Color(0XFF01B58A)
-                                : const Color(0XFFD3D3D3))
+                                ? btnColor
+                                : greyTransColor
+                            ),
+                            hintStyle: const TextStyle(
+                              fontSize: 16,
+                              height: 1,
+                              color: greyTransColor
+                            ),
                         ),
                         validator: (val) => val!.isEmpty ? 'Enter an email' : null,
                         onChanged: (val){
@@ -133,8 +141,9 @@ class _AuthenticateState extends State<Authenticate> {
                             'Choose your password',
                             style: TextStyle(
                                 fontFamily: 'Quick Sand',
-                                fontWeight: FontWeight.w800,
-                                fontSize: 18
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                                color: whiteColor
                             ),
                           ),
                         ),
@@ -143,14 +152,33 @@ class _AuthenticateState extends State<Authenticate> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 50),
                       child: TextFormField(
-                        decoration: textInputDecoration.copyWith(hintText: 'Min 6 character', prefixIcon: const Padding(
-                          padding: EdgeInsets.only(left: 20, right: 10),
-                          child: Icon(Icons.lock, size: 25),
+                        style: TextStyle(color: Colors.white),
+                        obscureText: true,
+                        decoration: textInputDecoration.copyWith(hintText: 'Min 6 character', prefixIcon: Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const Icon(Icons.lock, size: 28),
+                              Container(
+                                margin: EdgeInsets.symmetric(horizontal: 10),
+                                width: 2,
+                                height: 25,
+                                color: greyTransColor,
+                              )
+                            ],
+                          ),
                         ),
                             prefixIconColor: MaterialStateColor.resolveWith((states) =>
                             states.contains(MaterialState.focused)
-                                ? const Color(0XFF01B58A)
-                                : const Color(0XFFD3D3D3))
+                                ? btnColor
+                                : greyTransColor
+                            ),
+                            hintStyle: const TextStyle(
+                              fontSize: 16,
+                              height: 1,
+                              color: greyTransColor
+                            ),
                         ),
                         validator: (val) => val!.length < 6 ? 'Enter an password 6 chars long' : null,
                         onChanged: (val){
@@ -189,14 +217,15 @@ class _AuthenticateState extends State<Authenticate> {
                                   });
                                 }
                               }
+                              if(context.mounted) Navigator.pop(context);
                             },
                             child: const Text(
                               'Continue',
                               style: TextStyle(
-                                  fontWeight: FontWeight.w600,
+                                  fontWeight: FontWeight.w700,
                                   fontFamily: 'Quick Sand',
-                                  fontSize: 18,
-                                  color: Colors.white
+                                  fontSize: 20,
+                                  color: Color(0XFFFCFCFC)
                               ),
                             ),
                           ),
@@ -251,7 +280,7 @@ class _AuthenticateState extends State<Authenticate> {
                                             side: const BorderSide(color: Color(0XFFD3D3D3))
                                         ),
                                       ),
-                                      backgroundColor: MaterialStateProperty.all(Colors.white)
+                                      backgroundColor: MaterialStateProperty.all(bgOnBoard)
                                   ),
                                   onPressed: () {
                                   },
@@ -260,21 +289,15 @@ class _AuthenticateState extends State<Authenticate> {
                                     children: [
                                       Image.asset('assets/google.png'),
                                       const SizedBox(width: 10,),
-                                      GradientText(
+                                      const Text(
                                           'Sign up with google',
-                                          style: const TextStyle(
+                                          style: TextStyle(
                                               fontFamily: 'Quick Sand',
                                               fontSize: 16,
                                               fontWeight: FontWeight.w700,
-                                              color: Colors.black,
+                                              color: whiteColor,
                                               decoration: TextDecoration.none
                                           ),
-                                          gradientType: GradientType.linear,
-                                          gradientDirection: GradientDirection.ttb,
-                                          colors: const [
-                                            Color(0XFF0B1617),
-                                            Color(0XFF335F5C)
-                                          ]
                                       ),
                                     ],
                                   )
