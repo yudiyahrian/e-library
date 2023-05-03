@@ -6,4 +6,5 @@ const whiteColor = Color(0xFFFCFCFC);
 const greyTransColor = Color(0xFFD3D3D3);
 const bgOnBoard = Color(0xFF1F3B3A);
 const textColor = Color(0xFF101E1E);
+const darkGreen = Color(0xff009A75);
 // const bgCast = Color.fromRGBO(2, 27, 49, 0.17);

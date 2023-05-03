@@ -8,7 +8,7 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: bgOnBoard,
       child: Column(
         children: [
           Container(
@@ -27,9 +27,7 @@ class StartScreen extends StatelessWidget {
                                   bottomRight: Radius.circular(110),
                                   bottomLeft: Radius.circular(110)
                               ),
-                              gradient : LinearGradient(
-                                  colors: [Color.fromRGBO(51, 95, 92, 1), Color.fromRGBO(11, 22, 23, 1)]
-                              ),
+                              color: Color(0XFF009A75)
                             ),
                         )
                     ),
@@ -96,7 +94,7 @@ class StartScreen extends StatelessWidget {
                           fontFamily: 'Quick Sand',
                           fontWeight: FontWeight.w700,
                           decoration: TextDecoration.none,
-                          color: textColor
+                          color: whiteColor
                       ),
                   )
                 ],
@@ -111,7 +109,7 @@ class StartScreen extends StatelessWidget {
                         fontFamily: 'Quick Sand',
                         fontWeight: FontWeight.w600,
                         decoration: TextDecoration.none,
-                        color: textColor
+                        color: whiteColor
                     )
                   )
                 ],
@@ -127,7 +125,7 @@ class StartScreen extends StatelessWidget {
                           fontFamily: 'Quick Sand',
                           fontWeight: FontWeight.w600,
                           decoration: TextDecoration.none,
-                          color: textColor
+                          color: whiteColor
                       )
                   )
                 ],
@@ -138,9 +136,9 @@ class StartScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 50),
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width,
-                      height: 45,
+                      height: 60,
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 50),
+                        padding: const EdgeInsets.symmetric(horizontal: 60),
                         child: ElevatedButton(
                           style: ButtonStyle(
                               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -168,14 +166,14 @@ class StartScreen extends StatelessWidget {
                                 ),
                               ),
                               Container(
-                                margin: EdgeInsets.only(left: 10),
+                                margin: const EdgeInsets.only(left: 10),
                                 width: 20,
                                 height: 20,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Colors.white,
                                   shape: BoxShape.circle
                                 ),
-                                child: Icon(Icons.arrow_forward_ios_outlined, size: 13, color: Color(0XFF01B58A)),
+                                child: const Icon(Icons.arrow_forward_ios_outlined, size: 13, color: Color(0XFF01B58A)),
                               )
                             ],
                           ),
@@ -187,34 +185,8 @@ class StartScreen extends StatelessWidget {
               )
             ],
           )
-
         ],
       ),
     );
   }
 }
-
-//
-// Container(
-// width: MediaQuery.of(context).size.width,
-// height: 400,
-// decoration: const BoxDecoration(
-// borderRadius : BorderRadius.only(
-// bottomRight: Radius.circular(120),
-// bottomLeft: Radius.circular(120)
-// ),
-// gradient : LinearGradient(
-// colors: [Color.fromRGBO(51, 95, 92, 1), Color.fromRGBO(11, 22, 23, 1)]
-// ),
-// ),
-// child: Stack(
-// children: [
-// Container(
-// alignment: Alignment.bottomCenter,
-// width: 100,
-// height: 100,
-// color: Colors.grey,
-// )
-// ],
-// ),
-// ),
