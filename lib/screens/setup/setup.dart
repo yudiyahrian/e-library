@@ -103,23 +103,26 @@ class _SetupState extends State<Setup> {
               children: pages,
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SmoothPageIndicator(
-                  controller: _pageController,
-                  count: pages.length,
-                  effect: const ExpandingDotsEffect(
-                    activeDotColor: btnColor,
-                    dotColor: greyColor,
-                    expansionFactor: 2,
-                    radius: 6,
-                    spacing: 8,
-                    dotHeight: 10,
-                    dotWidth: 10,
-                  )
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(top: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SmoothPageIndicator(
+                    controller: _pageController,
+                    count: pages.length,
+                    effect: const ExpandingDotsEffect(
+                      activeDotColor: btnColor,
+                      dotColor: greyColor,
+                      expansionFactor: 2,
+                      radius: 6,
+                      spacing: 8,
+                      dotHeight: 10,
+                      dotWidth: 10,
+                    )
+                ),
+              ],
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 30),
