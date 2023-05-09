@@ -2,6 +2,8 @@ import 'package:e_library/models/user.dart';
 import 'package:e_library/screens/authenticate/setup_profile.dart';
 import 'package:e_library/screens/home/home.dart';
 import 'package:e_library/screens/home/start_screen.dart';
+import 'package:e_library/shared/modal.dart';
+import 'package:e_library/shared/read.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:e_library/services/database.dart';
@@ -29,7 +31,7 @@ class Wrapper extends StatelessWidget {
           if (userData.name == 'New user') {
             return const SetupProfile();
           } else {
-            return const Home();
+            return const ReadPage();
           }
         }
       },
