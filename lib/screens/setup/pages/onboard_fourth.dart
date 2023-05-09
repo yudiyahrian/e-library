@@ -16,12 +16,13 @@ class OnboardFourth extends StatelessWidget {
     InterestModel(name: 'Isekai', image: 'isekai.png', textColor: const Color(0XFF4F67A9), bgColor: const Color(0XFFE1E7FC), borderColor: const Color(0XFF6A88D8)),
     InterestModel(name: 'Horror', image: 'horror.png', textColor: const Color(0XFF686E7D), bgColor: const Color(0XFFF4F5FC), borderColor: const Color(0XFF686E7D)),
     InterestModel(name: 'Comedy', image: 'comedy.png', textColor: const Color(0XFFFFBE39), bgColor: const Color(0XFFFDFFAD), borderColor: const Color(0XFFF6C35A)),
-    InterestModel(name: 'Psychology', image: 'psychology.png', textColor: const Color(0XFF451E91), bgColor: const Color(0XFF8A7DA4), borderColor: const Color(0XFF643BB6)),
+    InterestModel(name: 'Inspiration', image: 'psychology.png', textColor: const Color(0XFF451E91), bgColor: const Color(0XFF8A7DA4), borderColor: const Color(0XFF643BB6)),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
+      physics: const BouncingScrollPhysics(),
       children: [
         Image.asset('assets/onboard_fourth.png', height: 180,),
         const Padding(
@@ -39,7 +40,7 @@ class OnboardFourth extends StatelessWidget {
           ),
         ),
         Container(
-          height: 134,
+          height: 116,
           margin: const EdgeInsets.symmetric(horizontal: 20),
           child: RawScrollbar(
             controller: _controller,
@@ -51,6 +52,7 @@ class OnboardFourth extends StatelessWidget {
             thumbVisibility: true,
             thickness: 4,
             child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               controller: _controller,
               child: GridView.count(
                 shrinkWrap: true,

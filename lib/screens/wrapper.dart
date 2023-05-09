@@ -1,9 +1,7 @@
 import 'package:e_library/models/user.dart';
 import 'package:e_library/screens/authenticate/setup_profile.dart';
-import 'package:e_library/screens/home/home.dart';
-import 'package:e_library/screens/home/start_screen.dart';
-import 'package:e_library/shared/modal.dart';
-import 'package:e_library/shared/read.dart';
+import 'package:e_library/screens/home/core.dart';
+import 'package:e_library/screens/home/pages/start_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:e_library/services/database.dart';
@@ -17,7 +15,6 @@ class Wrapper extends StatelessWidget {
 
     final user = Provider.of<UserModel?>(context);
 
-
     return FutureBuilder(
       future: user == null ? null : DatabaseService(uid: user.uid).userData.first,
       builder: (context, snapshot) {
@@ -27,11 +24,15 @@ class Wrapper extends StatelessWidget {
           // Show loading spinner while waiting for data to load
           return const CircularProgressIndicator();
         } else {
-          final userData = snapshot.data as UserData;
-          if (userData.name == 'New user') {
-            return const SetupProfile();
+          if (snapshot.hasData) {
+            final userData = snapshot.data;
+            if (userData != null && userData.name == 'New user') {
+              return const SetupProfile();
+            } else {
+              return const HomeCore();
+            }
           } else {
-            return const ReadPage();
+            return const CircularProgressIndicator();
           }
         }
       },
