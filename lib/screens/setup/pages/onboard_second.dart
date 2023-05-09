@@ -7,8 +7,7 @@ class OnboardSecond extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
+    return ListView(
       children: [
         Image.asset('assets/onboard_second.png', height: 230,),
         const Padding(

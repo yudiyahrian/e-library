@@ -26,7 +26,6 @@ class _SetupProfileState extends State<SetupProfile> {
   final List<String> majors = ['None','PPLG', 'TKJT', 'ANIMASI', 'BRC', 'TEI'];
 
   String? _currentName;
-  String? _currentGender;
   String? _currentClasses;
   String? _currentMajors;
   String? _currentPhoneNumber;
@@ -135,7 +134,7 @@ class _SetupProfileState extends State<SetupProfile> {
                                   children: const [
                                     Padding(
                                       padding: EdgeInsets.only(
-                                          left: 50, bottom: 10, top: 10),
+                                          left: 20, bottom: 10, top: 10),
                                       child: Text(
                                         'Fullname',
                                         style: TextStyle(
@@ -150,7 +149,7 @@ class _SetupProfileState extends State<SetupProfile> {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
-                                      horizontal: 50),
+                                      horizontal: 20),
                                   child: TextFormField(
                                     initialValue: userData?.name,
                                     style: TextStyle(color: Colors.white),
@@ -196,7 +195,7 @@ class _SetupProfileState extends State<SetupProfile> {
                                   children: const [
                                     Padding(
                                       padding: EdgeInsets.only(
-                                          left: 50, bottom: 10, top: 25),
+                                          left: 20, bottom: 10, top: 25),
                                       child: Text(
                                         'Class',
                                         style: TextStyle(
@@ -211,7 +210,7 @@ class _SetupProfileState extends State<SetupProfile> {
                                 ),
                                 Row(
                                   children: [
-                                    const SizedBox(width: 50,),
+                                    const SizedBox(width: 20,),
                                     SizedBox(
                                       width: 140,
                                       child: DropdownButtonFormField(
@@ -311,14 +310,14 @@ class _SetupProfileState extends State<SetupProfile> {
                                             setState(() => _currentMajors = value!),
                                       ),
                                     ),
-                                    const SizedBox(width: 50,),
+                                    const SizedBox(width: 20,),
                                   ],
                                 ),
                                 Row(
                                   children: const [
                                     Padding(
                                       padding: EdgeInsets.only(
-                                          left: 50, bottom: 10, top: 25),
+                                          left: 20, bottom: 10, top: 25),
                                       child: Text(
                                         'Phone Number',
                                         style: TextStyle(
@@ -332,12 +331,15 @@ class _SetupProfileState extends State<SetupProfile> {
                                   ],
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 50, right: 150),
+                                  padding: const EdgeInsets.only(left: 20, right: 130),
                                   child: TextFormField(
                                     keyboardType: TextInputType.number,
                                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                                     initialValue: userData?.phoneNumber,
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                      height: 1
+                                    ),
                                     decoration: textInputDecoration.copyWith(
                                       hintText: '08123456', prefixIcon: Padding(
                                       padding: const EdgeInsets.only(left: 15),
@@ -380,7 +382,7 @@ class _SetupProfileState extends State<SetupProfile> {
                                   children: const [
                                     Padding(
                                       padding: EdgeInsets.only(
-                                          left: 50, bottom: 10, top: 25),
+                                          left: 20, bottom: 10, top: 25),
                                       child: Text(
                                         'Profile Picture',
                                         style: TextStyle(
@@ -393,59 +395,60 @@ class _SetupProfileState extends State<SetupProfile> {
                                     ),
                                   ],
                                 ),
-                                image != null ?
+                                // image != null ?
+                                // Padding(
+                                //   padding: const EdgeInsets.symmetric(horizontal: 50),
+                                //   child: Row(
+                                //     children: [
+                                //       Flexible(
+                                //         flex: 1,
+                                //         child: Container(
+                                //           height: image != null ? 200 : 0,
+                                //           decoration: BoxDecoration(
+                                //               color: Colors.transparent,
+                                //               borderRadius: BorderRadius.circular(20)
+                                //           ),
+                                //           child: Column(
+                                //             children: [
+                                //               Row(
+                                //                 mainAxisAlignment: MainAxisAlignment.end,
+                                //                 children: const [
+                                //                   Padding(
+                                //                     padding: EdgeInsets.only(top: 5, right: 5),
+                                //                     child: Icon(Icons.edit),
+                                //                   )
+                                //                 ],
+                                //               ),
+                                //               Container(
+                                //                 margin: EdgeInsets.only(top: 5),
+                                //                 width: 150,
+                                //                 height: 150,
+                                //                 child: userData?.imageUrl != 'https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?w=740&t=st=1681009434~exp=1681010034~hmac=e69ca75338acbc3a3e8e79962d16ebafca18f1982274dd695b480ebe19c083de'
+                                //                     ? Image.network(userData!.imageUrl)
+                                //                     : Image.file(image!),
+                                //               )
+                                //             ],
+                                //           ),
+                                //         ),
+                                //       ),
+                                //     ],
+                                //   ),
+                                // ) :
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 50),
-                                  child: Row(
-                                    children: [
-                                      Flexible(
-                                        flex: 1,
-                                        child: Container(
-                                          height: image != null ? 200 : 0,
-                                          decoration: BoxDecoration(
-                                              color: Colors.transparent,
-                                              borderRadius: BorderRadius.circular(20)
-                                          ),
-                                          child: Column(
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment: MainAxisAlignment.end,
-                                                children: const [
-                                                  Padding(
-                                                    padding: EdgeInsets.only(top: 5, right: 5),
-                                                    child: Icon(Icons.edit),
-                                                  )
-                                                ],
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.only(top: 5),
-                                                width: 150,
-                                                height: 150,
-                                                child: userData?.imageUrl != 'https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?w=740&t=st=1681009434~exp=1681010034~hmac=e69ca75338acbc3a3e8e79962d16ebafca18f1982274dd695b480ebe19c083de'
-                                                    ? Image.network(userData!.imageUrl)
-                                                    : Image.file(image!),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ) :
-                                Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 50),
+                                    padding: EdgeInsets.symmetric(horizontal: 20),
                                   child: Row(
                                     children: [
                                       Flexible(
                                         flex: 1,
                                         child: GestureDetector(
                                           onTap: selectImageFromGallery,
-                                          child: Container(
-                                            height: 80,
+                                          child: AnimatedContainer(
+                                            height: image != null ? 300 :80,
                                             decoration: BoxDecoration(
                                               color: Color(0x99E8E8E8),
                                               borderRadius: BorderRadius.circular(20)
                                             ),
+                                            duration: Duration(seconds: 1),
                                             child: Row(
                                               mainAxisAlignment: MainAxisAlignment.center,
                                               children: const [
@@ -475,53 +478,54 @@ class _SetupProfileState extends State<SetupProfile> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 30),
-                                  child: SizedBox(
-                                    width: MediaQuery.of(context).size.width,
-                                    height: 45,
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(left: 270,right: 50),
-                                      child: ElevatedButton(
-                                        style: ButtonStyle(
-                                            shape: MaterialStateProperty.all<
-                                                RoundedRectangleBorder>(
-                                                RoundedRectangleBorder(
-                                                    borderRadius: BorderRadius
-                                                        .circular(50)
-                                                )
+                                  padding: const EdgeInsets.only(top: 30, right: 20),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      SizedBox(
+                                        width: 100,
+                                        height: 45,
+                                        child: ElevatedButton(
+                                          style: ButtonStyle(
+                                              shape: MaterialStateProperty.all<
+                                                  RoundedRectangleBorder>(
+                                                  RoundedRectangleBorder(
+                                                      borderRadius: BorderRadius
+                                                          .circular(50)
+                                                  )
+                                              ),
+                                              backgroundColor: MaterialStateProperty
+                                                  .all(const Color(0XFF01B58A))
+                                          ),
+                                          onPressed: () async {
+                                            if(image != null ) await uploadToFirebase(image);
+                                            if(_formKey.currentState!.validate()) {
+                                            await DatabaseService(uid: user.uid).updateUserData(
+                                              _currentName ?? userData!.name,
+                                              _currentClasses ?? userData!.classes,
+                                              downloadURL ?? userData!.imageUrl,
+                                              _currentMajors ?? userData!.majors,
+                                              _currentPhoneNumber ?? userData!.phoneNumber
+                                            );
+                                            // setState(() {
+                                            //   image = null;
+                                            // });
+                                            if (context.mounted) Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Setup()));
+                                            // if (context.mounted) Navigator.pop(context);
+                                            }
+                                          },
+                                          child: const Text(
+                                            'Next',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w600,
+                                                fontFamily: 'Quick Sand',
+                                                fontSize: 18,
+                                                color: Colors.white
                                             ),
-                                            backgroundColor: MaterialStateProperty
-                                                .all(const Color(0XFF01B58A))
-                                        ),
-                                        onPressed: () async {
-                                          if(image != null ) await uploadToFirebase(image);
-                                          if(_formKey.currentState!.validate()) {
-                                          await DatabaseService(uid: user.uid).updateUserData(
-                                            _currentName ?? userData!.name,
-                                            _currentGender ?? userData!.gender,
-                                            _currentClasses ?? userData!.classes,
-                                            downloadURL ?? userData!.imageUrl,
-                                            _currentMajors ?? userData!.majors,
-                                            _currentPhoneNumber ?? userData!.phoneNumber
-                                          );
-                                          // setState(() {
-                                          //   image = null;
-                                          // });
-                                          if (context.mounted) Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Setup()));
-                                          // if (context.mounted) Navigator.pop(context);
-                                          }
-                                        },
-                                        child: const Text(
-                                          'Next',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              fontFamily: 'Quick Sand',
-                                              fontSize: 18,
-                                              color: Colors.white
                                           ),
                                         ),
                                       ),
-                                    ),
+                                    ],
                                   ),
                                 ),
                               ],

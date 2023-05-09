@@ -1,3 +1,4 @@
+import 'package:e_library/shared/colors.dart';
 import 'package:flutter/material.dart';
 
 InputDecoration textInputDecoration = InputDecoration(
@@ -12,4 +13,17 @@ InputDecoration textInputDecoration = InputDecoration(
       borderSide: const BorderSide(color: Color(0XFF01B58A), width: 1),
       borderRadius: BorderRadius.circular(50),
   ),
+);
+
+InputDecoration textInputDecorationEdit = const InputDecoration(
+  fillColor: Colors.transparent,
+  isDense: true,
+  filled: true,
+  enabledBorder: UnderlineInputBorder(
+    borderSide: BorderSide(color: greyColor, width: 1.5),
+  ),
+  focusedBorder: UnderlineInputBorder(
+    borderSide: BorderSide(color: btnColor, width: 1.5),
+  ),
+  contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 5)
 );
