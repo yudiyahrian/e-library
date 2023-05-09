@@ -75,7 +75,7 @@ class _DetailState extends State<Detail> {
                                             )
                                         ),Positioned(
                                             top: 428,
-                                            left: 140,
+                                            left: 115,
                                             child: Container(
                                                 width: 130,
                                                 height: 72.02381134033203,
@@ -156,7 +156,7 @@ class _DetailState extends State<Detail> {
                                         ),
                                         Positioned(
                                             top: 310,
-                                            left: 58,
+                                            left: 30,
                                             child: SingleChildScrollView(
                                               child: Column(
                                                   children: <Widget>[
@@ -197,7 +197,7 @@ class _DetailState extends State<Detail> {
                           ),
                           Positioned(
                               top: 434,
-                              left: 176,
+                              left: 150,
                               child: Container(
                                   width: 60,
                                   height: 60,

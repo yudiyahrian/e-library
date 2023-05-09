@@ -8,6 +8,7 @@ class OnboardSecond extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      physics: const BouncingScrollPhysics(),
       children: [
         Image.asset('assets/onboard_second.png', height: 230,),
         const Padding(
