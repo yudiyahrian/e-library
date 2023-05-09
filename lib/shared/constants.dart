@@ -16,6 +16,7 @@ InputDecoration textInputDecoration = InputDecoration(
 );
 
 InputDecoration textInputDecorationEdit = const InputDecoration(
+  hintStyle: TextStyle(color: Colors.white),
   fillColor: Colors.transparent,
   isDense: true,
   filled: true,

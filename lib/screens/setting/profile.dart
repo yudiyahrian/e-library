@@ -21,7 +21,7 @@ class _ProfileState extends State<Profile> {
 
   bool editing = false;
   final _formKey = GlobalKey<FormState>();
-  final List<String> majors = ['None','PPLG', 'TKJT', 'ANIMASI', 'BRC', 'TEI'];
+  final List<String> majors = ['None','PPLG', 'TKJT', 'Animasi', 'BRC', 'TEI'];
   final List<String> classes = ['None','X','XI', 'XII'];
 
   String? _currentName;
@@ -67,6 +67,7 @@ class _ProfileState extends State<Profile> {
 
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context);
@@ -104,6 +105,7 @@ class _ProfileState extends State<Profile> {
                 ? Form(
                   key: _formKey,
                   child: ListView(
+                    physics: const BouncingScrollPhysics(),
                   children: <Widget>[
                     Stack(
                       children: [
@@ -192,8 +194,8 @@ class _ProfileState extends State<Profile> {
                           children: [
                             SvgPicture.asset(
                               'assets/icon/person_outline_24px.svg',
-                              height: 32,
-                              width: 32,
+                              height: 25,
+                              width: 25,
                             ),
                             const SizedBox(width: 15,),
                             SizedBox(
@@ -206,7 +208,7 @@ class _ProfileState extends State<Profile> {
                                     "Fullname",
                                     style: TextStyle(
                                       color: Color(0xff01B58A),
-                                      fontSize: 18,
+                                      fontSize: 15,
                                       fontFamily: 'Quicksand bold',
                                     ),
                                   ),
@@ -214,7 +216,7 @@ class _ProfileState extends State<Profile> {
                                     initialValue: userData.name,
                                     style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 23,
+                                      fontSize: 20,
                                       fontFamily: 'Quicksand bold',
                                     ),
                                     decoration: textInputDecorationEdit.copyWith(hintText: 'Name'),
@@ -245,8 +247,8 @@ class _ProfileState extends State<Profile> {
                           children: [
                             SvgPicture.asset(
                               'assets/icon/bookmark.svg',
-                              height: 40,
-                              width: 32,
+                              height: 30,
+                              width: 25,
                             ),
                             const SizedBox(width: 15,),
                             SizedBox(
@@ -259,7 +261,7 @@ class _ProfileState extends State<Profile> {
                                     "Class",
                                     style: TextStyle(
                                       color: Color(0xff01B58A),
-                                      fontSize: 18,
+                                      fontSize: 15,
                                       fontFamily: 'Quicksand bold',
                                     ),
                                   ),
@@ -270,7 +272,7 @@ class _ProfileState extends State<Profile> {
                                       iconSize: 29,
                                       style: const TextStyle(
                                         color: Colors.white,
-                                        fontSize: 23,
+                                        fontSize: 20,
                                         fontFamily: 'Quicksand bold',
                                       ),
                                       decoration: textInputDecorationEdit.copyWith(hintText: 'Classes'),
@@ -303,8 +305,8 @@ class _ProfileState extends State<Profile> {
                           children: [
                             SvgPicture.asset(
                               'assets/icon/star_border_purple500_24px.svg',
-                              height: 32,
-                              width: 32,
+                              height: 25,
+                              width: 25,
                             ),
                             const SizedBox(width: 15,),
                             SizedBox(
@@ -317,7 +319,7 @@ class _ProfileState extends State<Profile> {
                                     "Major",
                                     style: TextStyle(
                                       color: Color(0xff01B58A),
-                                      fontSize: 18,
+                                      fontSize: 15,
                                       fontFamily: 'Quicksand bold',
                                     ),
                                   ),
@@ -328,7 +330,7 @@ class _ProfileState extends State<Profile> {
                                     iconSize: 29,
                                     style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 23,
+                                      fontSize: 20,
                                       fontFamily: 'Quicksand bold',
                                     ),
                                     decoration: textInputDecorationEdit.copyWith(hintText: 'Classes'),
@@ -361,8 +363,8 @@ class _ProfileState extends State<Profile> {
                           children: [
                             SvgPicture.asset(
                               'assets/icon/local_phone_24px.svg',
-                              height: 32,
-                              width: 32,
+                              height: 25,
+                              width: 25,
                             ),
                             const SizedBox(width: 15,),
                             SizedBox(
@@ -375,7 +377,7 @@ class _ProfileState extends State<Profile> {
                                     "Phone Number",
                                     style: TextStyle(
                                       color: Color(0xff01B58A),
-                                      fontSize: 18,
+                                      fontSize: 15,
                                       fontFamily: 'Quicksand bold',
                                     ),
                                   ),
@@ -383,10 +385,10 @@ class _ProfileState extends State<Profile> {
                                     initialValue: userData.phoneNumber,
                                     style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 23,
+                                      fontSize: 20,
                                       fontFamily: 'Quicksand bold',
                                     ),
-                                    decoration: textInputDecorationEdit.copyWith(hintText: 'Name'),
+                                    decoration: textInputDecorationEdit.copyWith(hintText: '08123'),
                                     validator: (val) =>
                                     val!.isEmpty
                                         ? 'Enter an phone number'
@@ -483,6 +485,7 @@ class _ProfileState extends State<Profile> {
               ),
                 )
                 : ListView(
+                physics: const BouncingScrollPhysics(),
                 children: <Widget>[
                   Stack(
                     children: [
@@ -566,8 +569,8 @@ class _ProfileState extends State<Profile> {
                       children: [
                         SvgPicture.asset(
                             'assets/icon/person_outline_24px.svg',
-                          height: 32,
-                          width: 32,
+                          height: 25,
+                          width: 25,
                         ),
                         const SizedBox(width: 10,),
                         Column(
@@ -577,7 +580,7 @@ class _ProfileState extends State<Profile> {
                               "Fullname",
                               style: TextStyle(
                                 color: Color(0xff01B58A),
-                                fontSize: 18,
+                                fontSize: 15,
                                 fontFamily: 'Quicksand bold',
                               ),
                             ),
@@ -585,7 +588,7 @@ class _ProfileState extends State<Profile> {
                               userData.name,
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 23,
+                                fontSize: 20,
                                 fontFamily: 'Quicksand bold',
                               ),
                             ),
@@ -607,8 +610,8 @@ class _ProfileState extends State<Profile> {
                         children: [
                           SvgPicture.asset(
                             'assets/icon/bookmark.svg',
-                            height: 40,
-                            width: 32,
+                            height: 28,
+                            width: 25,
                           ),
                           const SizedBox(width: 10,),
                           Column(
@@ -618,7 +621,7 @@ class _ProfileState extends State<Profile> {
                                 "Class",
                                 style: TextStyle(
                                   color: Color(0xff01B58A),
-                                  fontSize: 18,
+                                  fontSize: 15,
                                   fontFamily: 'Quicksand bold',
                                 ),
                               ),
@@ -626,7 +629,7 @@ class _ProfileState extends State<Profile> {
                                 userData.classes,
                                 style: const TextStyle(
                                   color: Colors.white,
-                                  fontSize: 23,
+                                  fontSize: 20,
                                   fontFamily: 'Quicksand bold',
                                 ),
                               ),
@@ -648,8 +651,8 @@ class _ProfileState extends State<Profile> {
                         children: [
                           SvgPicture.asset(
                             'assets/icon/star_border_purple500_24px.svg',
-                            height: 32,
-                            width: 32,
+                            height: 25,
+                            width: 25,
                           ),
                           const SizedBox(width: 10,),
                           Column(
@@ -659,7 +662,7 @@ class _ProfileState extends State<Profile> {
                                 "Major",
                                 style: TextStyle(
                                   color: Color(0xff01B58A),
-                                  fontSize: 18,
+                                  fontSize: 15,
                                   fontFamily: 'Quicksand bold',
                                 ),
                               ),
@@ -667,7 +670,7 @@ class _ProfileState extends State<Profile> {
                                 userData.majors,
                                 style: const TextStyle(
                                   color: Colors.white,
-                                  fontSize: 23,
+                                  fontSize: 20,
                                   fontFamily: 'Quicksand bold',
                                 ),
                               ),
@@ -689,8 +692,8 @@ class _ProfileState extends State<Profile> {
                         children: [
                           SvgPicture.asset(
                             'assets/icon/local_phone_24px.svg',
-                            height: 32,
-                            width: 32,
+                            height: 25,
+                            width: 25,
                           ),
                           const SizedBox(width: 10,),
                           Column(
@@ -700,7 +703,7 @@ class _ProfileState extends State<Profile> {
                                 "Phone Number",
                                 style: TextStyle(
                                   color: Color(0xff01B58A),
-                                  fontSize: 18,
+                                  fontSize: 15,
                                   fontFamily: 'Quicksand bold',
                                 ),
                               ),
@@ -708,7 +711,7 @@ class _ProfileState extends State<Profile> {
                                 userData.phoneNumber,
                                 style: const TextStyle(
                                   color: Colors.white,
-                                  fontSize: 23,
+                                  fontSize: 20,
                                   fontFamily: 'Quicksand bold',
                                 ),
                               ),

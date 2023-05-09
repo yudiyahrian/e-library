@@ -471,7 +471,7 @@ class _DetailBookImageState extends State<DetailBookImage> {
 
   final PageController _pageController = PageController(
     initialPage: 1,
-    viewportFraction: 0.5,
+    viewportFraction: 0.6,
   );
 
   int _currentPage = 1;
