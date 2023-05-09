@@ -13,7 +13,7 @@ class StartScreen extends StatelessWidget {
         children: [
           Container(
               width: MediaQuery.of(context).size.width,
-              height: 370,
+              height: 450,
               child: Stack(
                   children: <Widget>[
                     Positioned(
@@ -21,7 +21,7 @@ class StartScreen extends StatelessWidget {
                         left: 0,
                         child: Container(
                             width: MediaQuery.of(context).size.width,
-                            height: 308,
+                            height: 370,
                             decoration: const BoxDecoration(
                               borderRadius : BorderRadius.only(
                                   bottomRight: Radius.circular(110),
@@ -32,31 +32,31 @@ class StartScreen extends StatelessWidget {
                         )
                     ),
                     Positioned(
-                        top: 200,
+                        top: 260,
                         left: MediaQuery.of(context).size.width / 3 - 10,
                         child: Container(
-                            width: 170,
-                            height: 170,
+                            width: 175,
+                            height: 175,
                             child: Stack(
                                 children: <Widget>[
                                   Positioned(
                                       top: 0,
                                       left: 0,
                                       child: Container(
-                                          width: 150,
-                                          height: 150,
+                                          width: 175,
+                                          height: 175,
                                           decoration: const BoxDecoration(
                                             shape: BoxShape.circle,
-                                            color : Color.fromRGBO(218, 218, 218, 1),
+                                            color : Color(0xFFEEEEEE),
                                           )
                                       )
                                   ),
                                   Positioned(
-                                      top: 10,
-                                      left: 21,
+                                      top: 22,
+                                      left: 25,
                                       child: Container(
-                                          width: 110,
-                                          height: 110,
+                                          width: 125,
+                                          height: 125,
                                           decoration: const BoxDecoration(
                                             image : DecorationImage(
                                                 image: AssetImage('assets/New-Icon.png'),
@@ -72,7 +72,7 @@ class StartScreen extends StatelessWidget {
                   ]
               )
           ),
-          const SizedBox(height: 40,),
+          const SizedBox(height: 50,),
           Column(
             children: [
               Row(
@@ -81,7 +81,7 @@ class StartScreen extends StatelessWidget {
                   Text(
                     'E-St',
                     style: TextStyle(
-                        fontSize: 50,
+                        fontSize: 52,
                         fontFamily: 'Quick Sand',
                         fontWeight: FontWeight.w700,
                         color: btnColor,
@@ -91,7 +91,7 @@ class StartScreen extends StatelessWidget {
                   Text(
                       'arby',
                       style: TextStyle(
-                          fontSize: 50,
+                          fontSize: 52,
                           fontFamily: 'Quick Sand',
                           fontWeight: FontWeight.w700,
                           decoration: TextDecoration.none,
@@ -115,7 +115,7 @@ class StartScreen extends StatelessWidget {
                   )
                 ],
               ),
-              const SizedBox(height: 30,),
+              const SizedBox(height: 35,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
@@ -134,17 +134,17 @@ class StartScreen extends StatelessWidget {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 50),
+                    padding: const EdgeInsets.only(top: 60),
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width,
-                      height: 60,
+                      height: 63,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 50),
                         child: ElevatedButton(
                           style: ButtonStyle(
                               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50)
+                                      borderRadius: BorderRadius.circular(55)
                                   )
                               ),
                               backgroundColor: MaterialStateProperty.all(const Color(0XFF01B58A))

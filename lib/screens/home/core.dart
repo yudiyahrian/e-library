@@ -2,6 +2,7 @@ import 'package:e_library/screens/home/pages/favorite.dart';
 import 'package:e_library/screens/home/pages/home.dart';
 import 'package:e_library/screens/home/pages/product.dart';
 import 'package:e_library/screens/home/pages/setting.dart';
+import 'package:e_library/shared/colors.dart';
 import 'package:e_library/shared/custom_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
@@ -47,6 +48,7 @@ class _HomeCoreState extends State<HomeCore> {
         ),
         child: WaterDropNavBar(
           backgroundColor: navigationBarColor,
+          waterDropColor: btnColor,
           bottomPadding: 20,
           inactiveIconColor: Colors.white,
           onItemSelected: (int index) {

@@ -76,7 +76,7 @@ class _AuthenticateState extends State<Authenticate> {
               ],
             ),
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 20),
+              margin: const EdgeInsets.only(bottom: 20,top: 40),
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -194,7 +194,7 @@ class _AuthenticateState extends State<Authenticate> {
                       padding: const EdgeInsets.only(top: 30),
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width,
-                        height: 45,
+                        height: 50,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 50),
                           child: ElevatedButton(
@@ -224,7 +224,7 @@ class _AuthenticateState extends State<Authenticate> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'Quick Sand',
-                                  fontSize: 20,
+                                  fontSize: 22,
                                   color: Color(0XFFFCFCFC)
                               ),
                             ),
@@ -269,7 +269,7 @@ class _AuthenticateState extends State<Authenticate> {
                           padding: const EdgeInsets.only(top: 5),
                           child: SizedBox(
                             width: MediaQuery.of(context).size.width,
-                            height: 45,
+                            height: 50,
                             child: Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 50),
                               child: ElevatedButton(
@@ -293,7 +293,7 @@ class _AuthenticateState extends State<Authenticate> {
                                           'Sign up with google',
                                           style: TextStyle(
                                               fontFamily: 'Quick Sand',
-                                              fontSize: 16,
+                                              fontSize: 18,
                                               fontWeight: FontWeight.w700,
                                               color: whiteColor,
                                               decoration: TextDecoration.none
