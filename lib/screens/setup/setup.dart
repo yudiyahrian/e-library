@@ -97,7 +97,7 @@ class _SetupState extends State<Setup> {
             ),
           ),
           SizedBox(
-            height: 430,
+            height: MediaQuery.of(context).size.height - 295,
             child: PageView(
               controller: _pageController,
               children: pages,
