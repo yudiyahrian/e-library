@@ -35,12 +35,13 @@ class _ProductState extends State<Product> {
       //   elevation: 0.0,
       // ),
       body: Container(
+        // color: Color(0xff1f3b3a),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             colors: <Color>[
-              Color(0xff0b1617),
-              Color(0xff335f5c),
+              Color(0xff1A3130),
+              Color(0xff080F0F),
             ],
             stops: <double>[0, 1],
           ),
