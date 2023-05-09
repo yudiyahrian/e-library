@@ -215,9 +215,10 @@ class _AuthenticateState extends State<Authenticate> {
                                     error = 'please supply a valid email';
                                     loading = false;
                                   });
+                                } else {
+                                  if(context.mounted) Navigator.pop(context);
                                 }
                               }
-                              if(context.mounted) Navigator.pop(context);
                             },
                             child: const Text(
                               'Continue',
