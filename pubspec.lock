@@ -113,6 +113,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.0.7"
+  dotted_decoration:
+    dependency: "direct main"
+    description:
+      name: dotted_decoration
+      sha256: a5c5771367690b4f64ebfa7911954ab472b9675f025c373f514e32ac4bb81d5e
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   drop_shadow_image:
     dependency: "direct main"
     description:
@@ -248,6 +256,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  google_nav_bar:
+    dependency: "direct main"
+    description:
+      name: google_nav_bar
+      sha256: "1c8e3882fa66ee7b74c24320668276ca23affbd58f0b14a24c1e5590f4d07ab0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.6"
   http:
     dependency: transitive
     description:
@@ -360,6 +376,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  page_transition:
+    dependency: "direct main"
+    description:
+      name: page_transition
+      sha256: a7694bc120b7064a7f57c336914bb8885acf4f70bb3772c30c2fcfe6a85e43ff
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.9"
   path:
     dependency: transitive
     description:
@@ -509,6 +533,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  water_drop_nav_bar:
+    dependency: "direct main"
+    description:
+      name: water_drop_nav_bar
+      sha256: f8be3696ce184f043ffdcb28b17418a4e46c83678b5d8d270b6393a9e5d5f36b
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.0+5"
   xml:
     dependency: transitive
     description:
