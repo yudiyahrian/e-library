@@ -21,7 +21,7 @@ class OnboardFourth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
         Image.asset('assets/onboard_fourth.png', height: 180,),
         const Padding(
@@ -39,7 +39,7 @@ class OnboardFourth extends StatelessWidget {
           ),
         ),
         Container(
-          height: 134,
+          height: 116,
           margin: const EdgeInsets.symmetric(horizontal: 20),
           child: RawScrollbar(
             controller: _controller,

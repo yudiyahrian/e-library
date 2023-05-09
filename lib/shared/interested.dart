@@ -40,7 +40,7 @@ class _InterestedState extends State<Interested> {
             children: [
               Image(
                   image: AssetImage(
-                    'assets/${widget.interest.image}',
+                    'assets/images/interest/${widget.interest.image}',
                   ),
                 height: 62,
               ),
