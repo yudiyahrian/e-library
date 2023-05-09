@@ -27,11 +27,11 @@ class _InterestedState extends State<Interested> {
         onTap: select,
         child: AnimatedContainer(
           decoration: BoxDecoration(
-              color: selected ? btnColor : widget.interest.bgColor,
+              color: widget.interest.bgColor,
               borderRadius: BorderRadius.circular(10),
             border: Border.all(
-                color: widget.interest.borderColor,
-              width: 2
+                color: selected ? btnColor : widget.interest.borderColor,
+              width: selected ? 4 : 2
             )
           ),
           duration: const Duration(milliseconds: 200),
