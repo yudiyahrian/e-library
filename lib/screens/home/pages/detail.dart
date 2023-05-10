@@ -160,38 +160,37 @@ class _DetailState extends State<Detail> {
                                         Positioned(
                                             top: 310,
                                             left: 30,
-                                            child: SingleChildScrollView(
-                                              child: Column(
-                                                  children: <Widget>[
-                                                    Text(
-                                                      widget.book.title,
-                                                        textAlign: TextAlign.center,
-                                                        style: const TextStyle(
-                                                          color: Colors.white,
-                                                          fontFamily: 'Quick Sand',
-                                                          fontSize: 27,
-                                                          decoration: TextDecoration.none,
-                                                          fontWeight: FontWeight.w700,
-                                                          height: 2
-                                                      ),
+                                            child: Column(
+                                                children: <Widget>[
+                                                  Text(
+                                                    widget.book.title,
+                                                      textAlign: TextAlign.center,
+                                                      style: const TextStyle(
+                                                        color: Colors.white,
+                                                        fontFamily: 'Quick Sand',
+                                                        fontSize: 27,
+                                                        decoration: TextDecoration.none,
+                                                        fontWeight: FontWeight.w700,
+                                                        height: 2
                                                     ),
-                                                    SizedBox(
-                                                      width: 300,
-                                                      child: Text(
-                                                        widget.book.description,
-                                                        textAlign: TextAlign.center,
-                                                        style: const TextStyle(
-                                                          color: Colors.white,
-                                                          fontFamily: 'Quick Sand',
-                                                          fontSize: 12,
-                                                          decoration: TextDecoration.none,
-                                                          fontWeight: FontWeight.w600,
-                                                          height: 1
-                                                      ),
-                                                      ),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 300,
+                                                    height: 48,
+                                                    child: Text(
+                                                      widget.book.description,
+                                                      textAlign: TextAlign.center,
+                                                      style: const TextStyle(
+                                                        color: Colors.white,
+                                                        fontFamily: 'Quick Sand',
+                                                        fontSize: 12,
+                                                        decoration: TextDecoration.none,
+                                                        fontWeight: FontWeight.w600,
+                                                        height: 1
                                                     ),
-                                                  ]
-                                              ),
+                                                    ),
+                                                  ),
+                                                ]
                                             )
                                         ),
                                       ]

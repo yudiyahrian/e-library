@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:e_library/models/book.dart';
+import 'package:e_library/shared/book_data.dart';
 import 'package:e_library/shared/books.dart';
 
 class Product extends StatefulWidget {
@@ -10,21 +10,6 @@ class Product extends StatefulWidget {
 }
 
 class _ProductState extends State<Product> {
-
-  List<PopularBook> popularBook = [
-    PopularBook(image: 'the_art_of_loving.png', title: 'The Art Of Loving', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f', genre: 'Romance', ranking: '1'),
-    PopularBook(image: 'the_art_of_loving.png', title: 'The Art Of Loving', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f', genre: 'Romance', ranking: '2'),
-    PopularBook(image: 'the_art_of_loving.png', title: 'The Art Of Loving', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f', genre: 'Romance', ranking: '3'),
-  ];
-
-  List<Book> books = [
-    Book(image: 'the_art_of_loving.png', title: 'The Art Of Loving', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'filosopi_teras.png', title: 'Filosofi Teras', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'seribu_wajah_ayah.png', title: 'Seribu Wajah Ayah', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'psychology_of_money.png', title: 'Psychology Of Money', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'blue_lock.png', title: 'Blue Lock', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'mata_rahasia_pulau.png', title: 'Mata dan rahasia pulau gapi', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -132,8 +117,8 @@ class _ProductState extends State<Product> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
-                children: const [
-                  Text(
+                children: [
+                  const Text(
                     'Books',
                     style: TextStyle(
                         fontSize: 24,
@@ -141,10 +126,10 @@ class _ProductState extends State<Product> {
                         color: Colors.white
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
-                    '8 Books',
-                    style: TextStyle(
+                    '${books.length.toString()} books',
+                    style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         color: Colors.white
