@@ -32,6 +32,7 @@ class _SetupProfileState extends State<SetupProfile> {
   File? image;
   String? downloadURL;
   bool isLoading = false;
+  bool animate = false;
 
     selectImageFromGallery() async
   {
@@ -152,6 +153,10 @@ class _SetupProfileState extends State<SetupProfile> {
                                       horizontal: 20),
                                   child: TextFormField(
                                     initialValue: userData?.name,
+                                    textInputAction: TextInputAction.next,
+                                    maxLines: 1,
+                                    textAlignVertical: TextAlignVertical.center,
+                                    textAlign: TextAlign.left,
                                     style: TextStyle(color: Colors.white),
                                     decoration: textInputDecoration.copyWith(
                                       hintText: 'rasstore', prefixIcon: Padding(
@@ -333,6 +338,10 @@ class _SetupProfileState extends State<SetupProfile> {
                                 Padding(
                                   padding: const EdgeInsets.only(left: 20, right: 130),
                                   child: TextFormField(
+                                    textInputAction: TextInputAction.next,
+                                    maxLines: 1,
+                                    textAlignVertical: TextAlignVertical.center,
+                                    textAlign: TextAlign.left,
                                     keyboardType: TextInputType.number,
                                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                                     initialValue: userData?.phoneNumber,
@@ -395,47 +404,8 @@ class _SetupProfileState extends State<SetupProfile> {
                                     ),
                                   ],
                                 ),
-                                // image != null ?
-                                // Padding(
-                                //   padding: const EdgeInsets.symmetric(horizontal: 50),
-                                //   child: Row(
-                                //     children: [
-                                //       Flexible(
-                                //         flex: 1,
-                                //         child: Container(
-                                //           height: image != null ? 200 : 0,
-                                //           decoration: BoxDecoration(
-                                //               color: Colors.transparent,
-                                //               borderRadius: BorderRadius.circular(20)
-                                //           ),
-                                //           child: Column(
-                                //             children: [
-                                //               Row(
-                                //                 mainAxisAlignment: MainAxisAlignment.end,
-                                //                 children: const [
-                                //                   Padding(
-                                //                     padding: EdgeInsets.only(top: 5, right: 5),
-                                //                     child: Icon(Icons.edit),
-                                //                   )
-                                //                 ],
-                                //               ),
-                                //               Container(
-                                //                 margin: EdgeInsets.only(top: 5),
-                                //                 width: 150,
-                                //                 height: 150,
-                                //                 child: userData?.imageUrl != 'https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?w=740&t=st=1681009434~exp=1681010034~hmac=e69ca75338acbc3a3e8e79962d16ebafca18f1982274dd695b480ebe19c083de'
-                                //                     ? Image.network(userData!.imageUrl)
-                                //                     : Image.file(image!),
-                                //               )
-                                //             ],
-                                //           ),
-                                //         ),
-                                //       ),
-                                //     ],
-                                //   ),
-                                // ) :
                                 Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 20),
+                                  padding: EdgeInsets.symmetric(horizontal: 20),
                                   child: Row(
                                     children: [
                                       Flexible(
@@ -443,34 +413,86 @@ class _SetupProfileState extends State<SetupProfile> {
                                         child: GestureDetector(
                                           onTap: selectImageFromGallery,
                                           child: AnimatedContainer(
-                                            height: image != null ? 300 :80,
+                                            height: image != null ? 120 : 80,
                                             decoration: BoxDecoration(
-                                              color: Color(0x99E8E8E8),
+                                              color: image != null ? Colors.grey.withOpacity(0.3) : Color(0x99E8E8E8),
                                               borderRadius: BorderRadius.circular(20)
                                             ),
                                             duration: Duration(seconds: 1),
-                                            child: Row(
+                                            child: Column(
                                               mainAxisAlignment: MainAxisAlignment.center,
-                                              children: const [
-                                                Icon(
-                                                    Icons.cloud_upload_rounded,
-                                                  color: whiteColor,
-                                                  size: 32,
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsets.only(left: 10),
-                                                  child: Text(
-                                                      'Click to upload your profile',
-                                                    style: TextStyle(
+                                              children: [
+                                                image == null
+                                                    ? Row(
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  children: const [
+                                                    Icon(
+                                                      Icons.cloud_upload_rounded,
                                                       color: whiteColor,
-                                                      fontSize: 14,
-                                                      fontWeight: FontWeight.w500,
-                                                      fontFamily: 'Quick Sand'
+                                                      size: 32,
                                                     ),
-                                                  ),
-                                                ),
+                                                    Padding(
+                                                      padding: EdgeInsets.only(left: 10),
+                                                      child: Text(
+                                                        'Click to upload your profile',
+                                                        style: TextStyle(
+                                                            color: whiteColor,
+                                                            fontSize: 14,
+                                                            fontWeight: FontWeight.w500,
+                                                            fontFamily: 'Quick Sand'
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                )
+                                                    : Stack(
+                                                  children: [
+                                                    Positioned(
+                                                      right: 5,
+                                                      child: AnimatedOpacity(
+                                                        opacity: animate ? 1 : 0,
+                                                        duration: Duration(milliseconds: 500),
+                                                        child: GestureDetector(
+                                                          onTap: () {
+                                                            setState(() {
+                                                              image = null;
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                                Icons.close,
+                                                              size: 32,
+                                                              color: greyColor,
+                                                            ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Row(
+                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                      children: [
+                                                        AnimatedContainer(
+                                                          margin: const EdgeInsets.only(left: 15),
+                                                          width: animate ? 100 : 0,
+                                                          height: animate ? 100 : 0,
+                                                          duration: Duration(milliseconds: 500),
+                                                          child: ClipRRect(
+                                                            borderRadius: BorderRadius.circular(100),
+                                                            child: Image.file(
+                                                              image!,
+                                                              fit: BoxFit.cover,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ],
+                                                )
                                               ],
                                             ),
+                                            onEnd: () {
+                                              setState(() {
+                                                animate = !animate;
+                                              });
+                                            },
                                           ),
                                         ),
                                       ),
