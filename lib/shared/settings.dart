@@ -31,7 +31,7 @@ class _SettingListState extends State<SettingList> {
             color: Colors.white,
             fontSize: 18,
             fontWeight: FontWeight.w600,
-            fontFamily: 'Quicksand',
+            fontFamily: 'Quicksand bold',
           ),
         ),
         leading: SvgPicture.asset(

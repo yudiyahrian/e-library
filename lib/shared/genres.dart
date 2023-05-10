@@ -29,7 +29,8 @@ class HorizontalGenre extends StatelessWidget {
                 genre.name,
                 style: const TextStyle(
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Quick Sand',
+                  fontWeight: FontWeight.w700,
                   fontSize: 16,
                 ),
               ),
@@ -41,6 +42,7 @@ class HorizontalGenre extends StatelessWidget {
               genre.name,
               style: const TextStyle(
                 color: greyColor,
+                fontFamily: 'Quick Sand',
                 fontWeight: FontWeight.w700,
                 fontSize: 16,
               ),

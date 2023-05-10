@@ -36,7 +36,7 @@ class _FavoriteState extends State<Favorite> {
         maintainBottomViewPadding: true,
         child: Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
+            gradient: LinearGradient( 
               begin: Alignment.topLeft,
               colors: <Color>[
                 Color(0xff1A3130),
@@ -79,9 +79,10 @@ class _FavoriteState extends State<Favorite> {
                                   ),
                                   hintText: "Titles, authors or topics . . . .",
                                   hintStyle:  const TextStyle(
-                                    fontWeight: FontWeight.normal,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'Quick Sand',
                                     color: Color(0xFF4E4E4E),
-                                    fontSize: 16
+                                    fontSize: 14
                                   ),
                                   prefixIcon: const Icon(Icons.search, size: 30,),
                                   prefixIconColor: const Color(0xFF4E4E4E)),
@@ -107,6 +108,7 @@ class _FavoriteState extends State<Favorite> {
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w700,
+                          fontFamily: 'Quick Sand',
                           color: Colors.white
                       ),
                     ),
@@ -115,7 +117,7 @@ class _FavoriteState extends State<Favorite> {
                       '${books.length.toString()} books',
                       style: const TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Quicksand medium',
                           color: Colors.white
                       ),
                     )
