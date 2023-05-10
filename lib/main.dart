@@ -9,7 +9,6 @@ import 'package:e_library/screens/setting/profile.dart';
 import 'package:e_library/screens/setting/terms_policy.dart';
 import 'package:e_library/screens/splash_screen.dart';
 import 'package:e_library/services/auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:page_transition/page_transition.dart';
@@ -23,10 +22,6 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  signOut() async {
-    await FirebaseAuth.instance.signOut();
-  }
 
   // This widget is the root of your application.
   @override
@@ -102,9 +97,6 @@ class MyApp extends StatelessWidget {
                 duration: const Duration(milliseconds: 300),
                 reverseDuration: const Duration(milliseconds: 200),
               );
-            case '/logout':
-              signOut();
-              break;
             default:
               return null;
           }

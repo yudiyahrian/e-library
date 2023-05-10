@@ -10,65 +10,78 @@ class BookList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(20,10, 0, 10),
-          child: Container(
-            height: 120,
-            width: 90,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                image: DecorationImage(
-                    image: AssetImage('assets/${book.image}'),
-                    fit: BoxFit.fill
-                )
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Container(
-            width: 1.5,
-            height: 95,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5)
-            ),
-          ),
-        ),
-        SizedBox(
-          width: MediaQuery.of(context).size.width - 160,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                book.title,
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    decoration: TextDecoration.underline
-                ),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, PageTransition(
+        type: PageTransitionType.fade,
+        child: Detail(book: book,),
+        isIos: true,
+        reverseDuration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 400),
+        )
+        );
+      },
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20,10, 0, 10),
+            child: Container(
+              height: 120,
+              width: 90,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  image: DecorationImage(
+                      image: AssetImage('assets/${book.image}'),
+                      fit: BoxFit.fill
+                  )
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width - 169,
-                  child: Text(
-                    book.description,
-                    style: const TextStyle(
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Container(
+              width: 1.5,
+              height: 95,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5)
+              ),
+            ),
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width - 160,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  book.title,
+                  style: const TextStyle(
                       color: Colors.white,
-                      fontSize: 13,
-                      fontWeight: FontWeight.normal,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                      decoration: TextDecoration.underline
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width - 169,
+                    height: 90,
+                    child: Text(
+                      book.description,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 13,
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -89,7 +102,8 @@ class HorizontalBookList extends StatelessWidget {
             isIos: true,
             reverseDuration: const Duration(milliseconds: 300),
             duration: const Duration(milliseconds: 400),
-          ),);
+          ),
+          );
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -233,6 +247,7 @@ class _PopularBookListState extends State<PopularBookList> {
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width - 230,
+                height: 50,
                 child: Text(
                   widget.book.description,
                   style: const TextStyle(

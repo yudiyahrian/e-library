@@ -100,6 +100,11 @@ class _AuthenticateState extends State<Authenticate> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 50),
                       child: TextFormField(
+                        textInputAction: TextInputAction.next,
+                        keyboardType: TextInputType.emailAddress,
+                        maxLines: 1,
+                        textAlignVertical: TextAlignVertical.center,
+                        textAlign: TextAlign.left,
                         style: TextStyle(color: Colors.white),
                         decoration: textInputDecoration.copyWith(hintText: 'starbhak@gmail.com', prefixIcon: Padding(
                           padding: const EdgeInsets.only(left: 20),
@@ -152,6 +157,11 @@ class _AuthenticateState extends State<Authenticate> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 50),
                       child: TextFormField(
+                        textInputAction: TextInputAction.next,
+                        keyboardType: TextInputType.emailAddress,
+                        maxLines: 1,
+                        textAlignVertical: TextAlignVertical.center,
+                        textAlign: TextAlign.left,
                         style: TextStyle(color: Colors.white),
                         obscureText: true,
                         decoration: textInputDecoration.copyWith(hintText: 'Min 6 character', prefixIcon: Padding(
@@ -188,7 +198,10 @@ class _AuthenticateState extends State<Authenticate> {
                     ),
                     Text(
                         error,
-                        style: const TextStyle(color: Colors.red, fontSize: 14)
+                        style: const TextStyle(
+                            color: Colors.red,
+                            fontSize: 16
+                        )
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 30),
@@ -212,7 +225,7 @@ class _AuthenticateState extends State<Authenticate> {
                                 dynamic result = await _auth.registerWithEmailAndPassword(email, password);
                                 if (result == null){
                                   setState(() {
-                                    error = 'please supply a valid email';
+                                    error = 'Credentials does not match';
                                     loading = false;
                                   });
                                 } else {

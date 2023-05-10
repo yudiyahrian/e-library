@@ -29,7 +29,7 @@ final List<CarouselModel> imgList = [
       description: "description"),
   CarouselModel(
       image: 'assets/images/carousel/Romance.jpg',
-      genre: "Romace",
+      genre: "Romance",
       description: "description"),
   CarouselModel(
       image: 'assets/images/carousel/Sci-Fi.jpg',
