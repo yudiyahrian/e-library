@@ -1,13 +1,19 @@
+import 'package:e_library/screens/wrapper.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
-class Inoice_peminjaman extends StatefulWidget {
-  const Inoice_peminjaman({super.key});
+class BorrowInvoice extends StatefulWidget {
+  final String currentDate;
+  final String bookName;
+  final String pickUpDate;
+  final String duration;
+  const BorrowInvoice({super.key, required this.currentDate, required this.bookName, required this.pickUpDate, required this.duration});
 
   @override
-  State<Inoice_peminjaman> createState() => _Inoice_peminjamanState();
+  State<BorrowInvoice> createState() => _BorrowInvoiceState();
 }
 
-class _Inoice_peminjamanState extends State<Inoice_peminjaman> {
+class _BorrowInvoiceState extends State<BorrowInvoice> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +29,7 @@ class _Inoice_peminjamanState extends State<Inoice_peminjaman> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset(
-                    "assets/images/icon-starby.png",
+                    "assets/New-Icon.png",
                     width: 55.0,
                     height: 55.0,
                     fit: BoxFit.fill,
@@ -73,19 +79,19 @@ class _Inoice_peminjamanState extends State<Inoice_peminjaman> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Text(
-                    "April 25, 2023",
-                    style: TextStyle(
+                    widget.currentDate,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontFamily: 'Quicksand bold',
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 100,
                   ),
-                  Text(
+                  const Text(
                     "#00618575",
                     style: TextStyle(
                       color: Colors.white,
@@ -98,15 +104,15 @@ class _Inoice_peminjamanState extends State<Inoice_peminjaman> {
               const Divider(
                 color: Color(0xff01B58A),
                 thickness: 2,
-                indent: 62,
-                endIndent: 62,
+                indent: 35,
+                endIndent: 35,
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
                 child: Column(
-                  children: const [
+                  children: [
                     ListTile(
-                      title: Text(
+                      title: const Text(
                         "Book :",
                         style: TextStyle(
                           color: Colors.grey,
@@ -115,8 +121,8 @@ class _Inoice_peminjamanState extends State<Inoice_peminjaman> {
                         ),
                       ),
                       subtitle: Text(
-                        "Filosofi Teras 2020",
-                        style: TextStyle(
+                        widget.bookName,
+                        style: const TextStyle(
                           color: Colors.white,
                           fontFamily: 'quicksand bold',
                           fontSize: 18,
@@ -124,7 +130,7 @@ class _Inoice_peminjamanState extends State<Inoice_peminjaman> {
                       ),
                     ),
                     ListTile(
-                      title: Text(
+                      title: const Text(
                         "Pick-Up Date :",
                         style: TextStyle(
                           color: Colors.grey,
@@ -133,8 +139,8 @@ class _Inoice_peminjamanState extends State<Inoice_peminjaman> {
                         ),
                       ),
                       subtitle: Text(
-                        "27/04/2023",
-                        style: TextStyle(
+                        widget.pickUpDate,
+                        style: const TextStyle(
                           color: Colors.white,
                           fontFamily: 'quicksand bold',
                           fontSize: 18,
@@ -142,7 +148,7 @@ class _Inoice_peminjamanState extends State<Inoice_peminjaman> {
                       ),
                     ),
                     ListTile(
-                      title: Text(
+                      title: const Text(
                         "Return Time :",
                         style: TextStyle(
                           color: Colors.grey,
@@ -151,8 +157,8 @@ class _Inoice_peminjamanState extends State<Inoice_peminjaman> {
                         ),
                       ),
                       subtitle: Text(
-                        "3 Days",
-                        style: TextStyle(
+                        "${widget.duration} Days",
+                        style: const TextStyle(
                           color: Colors.white,
                           fontFamily: 'quicksand bold',
                           fontSize: 18,
@@ -169,7 +175,12 @@ class _Inoice_peminjamanState extends State<Inoice_peminjaman> {
                 width: 300,
                 height: 42,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, PageTransition(
+                        child: const Wrapper(),
+                        type: PageTransitionType.fade
+                    ));
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xff01B58A),
                     shape: RoundedRectangleBorder(
@@ -177,7 +188,7 @@ class _Inoice_peminjamanState extends State<Inoice_peminjaman> {
                     ),
                   ),
                   child: const Text(
-                    'Edit Profile',
+                    'Back to home',
                   ),
                 ),
               )

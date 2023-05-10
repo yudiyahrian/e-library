@@ -1,7 +1,10 @@
+import 'package:e_library/screens/home/pages/borrow_form.dart';
+import 'package:e_library/screens/home/pages/read.dart';
 import 'package:e_library/shared/books.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:e_library/models/book.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Detail extends StatefulWidget {
   final Book book;
@@ -453,7 +456,12 @@ class _DetailState extends State<Detail> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(context, PageTransition(
+                        child: BorrowForm(bookName: widget.book.title,),
+                        type: PageTransitionType.fade
+                    ));
+                  },
                   style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(10)),
                       backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFFFFB800)),
@@ -475,7 +483,12 @@ class _DetailState extends State<Detail> {
                   )
               ),
               ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(context, PageTransition(
+                    child: const ReadPage(),
+                    type: PageTransitionType.fade
+                    ));
+                  },
                   style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.symmetric(vertical: 10, horizontal: 15)),
                       backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF009A75)),
