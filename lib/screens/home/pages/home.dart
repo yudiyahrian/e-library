@@ -430,7 +430,7 @@ class _HomePageState extends State<HomePage> {
                                     padding: const EdgeInsets.only(
                                         top: 90.0, left: 10.0),
                                     height: 120,
-                                    width: 90,
+                                    width: 100,
                                     child: const Text(
                                       "Fantasy",
                                       style: TextStyle(
@@ -484,7 +484,7 @@ class _HomePageState extends State<HomePage> {
                                     padding: const EdgeInsets.only(
                                         top: 90.0, left: 10.0),
                                     height: 120,
-                                    width: 90,
+                                    width: 100,
                                     child: const Text(
                                       "History",
                                       style: TextStyle(
