@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color(0xff1f3b3a),
+        color: const Color(0xff1f3b3a),
         // decoration: const BoxDecoration(
         //   gradient: LinearGradient(
         //     begin: Alignment.topLeft,
@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Center(
               child: Container(
-                margin: const EdgeInsets.only(bottom: 300,top: 280),
+                margin: const EdgeInsets.only(bottom: 100,top: 150),
                 child: Column(
                   children: [
                     Image.asset(
@@ -56,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         Text(
                           'E-St',
                           style: TextStyle(
@@ -75,7 +75,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         )
                       ],
                     ),
-                    Text('Starbhak Library',
+                    const Text('Starbhak Library',
                         style: TextStyle(
                             fontSize: 20.0,
                             color: Colors.white,
@@ -97,7 +97,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     borderRadius: const BorderRadius.all(
                       Radius.circular(900.0),
                     ),
-                    border: Border.all(color: Color(0xFF01B58A), width: 20)),
+                    border: Border.all(color: const Color(0xFF01B58A), width: 20)),
               ),
             ),
             AnimatedPositioned(
@@ -128,7 +128,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     borderRadius: const BorderRadius.all(
                       Radius.circular(900.0),
                     ),
-                    border: Border.all(color: Color(0xFFFFFFFF), width: 20)),
+                    border: Border.all(color: const Color(0xFFFFFFFF), width: 20)),
               ),
             ),
             AnimatedPositioned(

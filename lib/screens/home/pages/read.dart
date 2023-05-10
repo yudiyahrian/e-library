@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class ReadPage extends StatefulWidget {
   const ReadPage({super.key});
@@ -15,7 +13,7 @@ class _ReadPageState extends State<ReadPage> {
     return MaterialApp(
       home: Scaffold(
           endDrawer: Drawer(
-            backgroundColor: Color(0xFF1F3B3A),
+            backgroundColor: const Color(0xFF1F3B3A),
             width: 200,
             child: ListView(
               children: [
@@ -23,8 +21,8 @@ class _ReadPageState extends State<ReadPage> {
                   child: Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(top: 10),
-                        child: Text(
+                        margin: const EdgeInsets.only(top: 10),
+                        child: const Text(
                           "Menu",
                           style: TextStyle(
                             color: Colors.white,
@@ -35,7 +33,7 @@ class _ReadPageState extends State<ReadPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 10),
+                        margin: const EdgeInsets.only(top: 10),
                         width: 120,
                         child: Image.asset(
                           "assets/images/book/filosofi.jpg",
@@ -45,8 +43,8 @@ class _ReadPageState extends State<ReadPage> {
                         child: Column(
                           children: [
                             Container(
-                              margin: EdgeInsets.only(top: 10),
-                              child: Text(
+                              margin: const EdgeInsets.only(top: 10),
+                              child: const Text(
                                 "Filosofi beras",
                                 style: TextStyle(
                                     color: Colors.white,
@@ -56,7 +54,7 @@ class _ReadPageState extends State<ReadPage> {
                               ),
                             ),
                             Container(
-                              child: Text(
+                              child: const Text(
                                 "Henry Managelas",
                                 style: TextStyle(
                                   fontFamily: "Quick Sand",
@@ -71,8 +69,8 @@ class _ReadPageState extends State<ReadPage> {
                       ),
                       Container(
                         width: double.maxFinite,
-                        margin: EdgeInsets.only(top:20, left: 7),
-                        child: Text(
+                        margin: const EdgeInsets.only(top:20, left: 7),
+                        child: const Text(
                           "86 Bab",
                           style: TextStyle(
                               color: Colors.white,
@@ -85,8 +83,7 @@ class _ReadPageState extends State<ReadPage> {
                         child: Column(
                           children: [
                             Container(
-
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                   color: Colors.white,
@@ -94,8 +91,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 10, bottom: 15, top: 15),
-                                  child: Text(
+                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  child: const Text(
                                     "Bab 1",
                                     style: TextStyle(
                                         color: Colors.white,
@@ -105,7 +102,7 @@ class _ReadPageState extends State<ReadPage> {
                                 )),
                                 Container(
 
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                   color: Colors.white,
@@ -113,8 +110,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 10, bottom: 15, top: 15),
-                                  child: Text(
+                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  child: const Text(
                                     "Bab 2",
                                     style: TextStyle(
                                         color: Colors.white,
@@ -124,7 +121,7 @@ class _ReadPageState extends State<ReadPage> {
                                 )),
                                 Container(
 
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                   color: Colors.white,
@@ -132,8 +129,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 10, bottom: 15, top: 15),
-                                  child: Text(
+                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  child: const Text(
                                     "Bab 3",
                                     style: TextStyle(
                                         color: Colors.white,
@@ -143,7 +140,7 @@ class _ReadPageState extends State<ReadPage> {
                                 )),
                                 Container(
 
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                   color: Colors.white,
@@ -151,8 +148,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 10, bottom: 15, top: 15),
-                                  child: Text(
+                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  child: const Text(
                                     "Bab 4",
                                     style: TextStyle(
                                         color: Colors.white,
@@ -162,7 +159,7 @@ class _ReadPageState extends State<ReadPage> {
                                 )),
                                 Container(
 
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                   color: Colors.white,
@@ -170,8 +167,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 10, bottom: 15, top: 15),
-                                  child: Text(
+                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  child: const Text(
                                     "Bab 5",
                                     style: TextStyle(
                                         color: Colors.white,
@@ -181,7 +178,7 @@ class _ReadPageState extends State<ReadPage> {
                                 )),
                                 Container(
 
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                   color: Colors.white,
@@ -189,8 +186,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 10, bottom: 15, top: 15),
-                                  child: Text(
+                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  child: const Text(
                                     "Bab 6",
                                     style: TextStyle(
                                         color: Colors.white,
@@ -200,7 +197,7 @@ class _ReadPageState extends State<ReadPage> {
                                 )),
                                 Container(
 
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                   color: Colors.white,
@@ -208,8 +205,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 10, bottom: 15, top: 15),
-                                  child: Text(
+                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  child: const Text(
                                     "Bab 7",
                                     style: TextStyle(
                                         color: Colors.white,
@@ -219,7 +216,7 @@ class _ReadPageState extends State<ReadPage> {
                                 )),
                                 Container(
 
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                   color: Colors.white,
@@ -227,8 +224,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 10, bottom: 15, top: 15),
-                                  child: Text(
+                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  child: const Text(
                                     "Bab 8",
                                     style: TextStyle(
                                         color: Colors.white,
@@ -238,7 +235,7 @@ class _ReadPageState extends State<ReadPage> {
                                 )),
                                 Container(
 
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                   color: Colors.white,
@@ -246,8 +243,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 10, bottom: 15, top: 15),
-                                  child: Text(
+                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  child: const Text(
                                     "Bab 9",
                                     style: TextStyle(
                                         color: Colors.white,
@@ -257,7 +254,7 @@ class _ReadPageState extends State<ReadPage> {
                                 )),
                                 Container(
 
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                   color: Colors.white,
@@ -265,8 +262,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 10, bottom: 15, top: 15),
-                                  child: Text(
+                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  child: const Text(
                                     "Bab 10",
                                     style: TextStyle(
                                         color: Colors.white,
@@ -276,7 +273,7 @@ class _ReadPageState extends State<ReadPage> {
                                 )),
                                 Container(
 
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                   color: Colors.white,
@@ -284,8 +281,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 10, bottom: 15, top: 15),
-                                  child: Text(
+                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  child: const Text(
                                     "Bab 11",
                                     style: TextStyle(
                                         color: Colors.white,
@@ -295,7 +292,7 @@ class _ReadPageState extends State<ReadPage> {
                                 )),
                                 Container(
 
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                   color: Colors.white,
@@ -303,8 +300,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 10, bottom: 15, top: 15),
-                                  child: Text(
+                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  child: const Text(
                                     "Bab 12",
                                     style: TextStyle(
                                         color: Colors.white,
@@ -324,18 +321,20 @@ class _ReadPageState extends State<ReadPage> {
             ),
           ),
           appBar: AppBar(
-            backgroundColor: Color(0xFF335F5C),
+            backgroundColor: const Color(0xFF335F5C),
             elevation: 0,
             leading: Container(
-                margin: EdgeInsets.only(left: 14),
+                margin: const EdgeInsets.only(left: 14),
                 child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
                       Icons.close,
                       color: Colors.white,
                       size: 35,
                     ))),
-            title: Text(
+            title: const Text(
               "Filosofi Teras",
               style: TextStyle(
                   fontFamily: "Quick Sand",
@@ -346,16 +345,16 @@ class _ReadPageState extends State<ReadPage> {
           ),
           body: Container(
             width: double.maxFinite,
-            decoration: BoxDecoration(color: Color(0xFF335F5C)),
-            child: Column(
+            decoration: const BoxDecoration(color: Color(0xFF335F5C)),
+            child: ListView(
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 25, right: 15, top: 5),
+                  margin: const EdgeInsets.only(left: 25, right: 15, top: 5),
                   child: Column(
                     children: [
                       Container(
                         width: double.maxFinite,
-                        child: Text(
+                        child: const Text(
                           "Bab 1",
                           style: TextStyle(
                             fontFamily: "Quick Sand",
@@ -367,8 +366,8 @@ class _ReadPageState extends State<ReadPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 20),
-                        child: Text(
+                        margin: const EdgeInsets.only(top: 20),
+                        child: const Text(
                           "   Seorang pria termenung sambil duduk di atas kursi rodanya. Wajah pucat pasih tidak mengurangi ketampanan yang pria itu miliki, senyum manisnya tidak luntur meski rasa sakit terus menggerogoti tubuhnya.",
                           style: TextStyle(
                               color: Colors.white,
@@ -378,8 +377,8 @@ class _ReadPageState extends State<ReadPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 25),
-                        child: Text(
+                        margin: const EdgeInsets.only(top: 25),
+                        child: const Text(
                           "   Dia sedang berada disebuah taman, menatap ke arah langit dimana baru saja melintas sebuah pesawat komersil yang mengingatkan dirinya akan cita-citanya yang kandas akibat penyakit yang membuat dirinya semakin lemah.",
                           style: TextStyle(
                               color: Colors.white,
@@ -389,8 +388,8 @@ class _ReadPageState extends State<ReadPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 25),
-                        child: Text(
+                        margin: const EdgeInsets.only(top: 25),
+                        child: const Text(
                           "   Bagaimana dia bisa melakukan pekerjaanya itu saat tubuh lemah saja tidak mampu untuk sekedar berdiri, meski dia begitu ingin menikmati hidupnya.",
                           style: TextStyle(
                               color: Colors.white,

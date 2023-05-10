@@ -48,8 +48,8 @@ class _FavoriteState extends State<Favorite> {
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               colors: <Color>[
-                Color(0xff0b1617),
-                Color(0xff335f5c),
+                Color(0xff1A3130),
+                Color(0xff080F0F),
               ],
               stops: <double>[0, 1],
             ),
