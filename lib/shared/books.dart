@@ -98,7 +98,7 @@ class HorizontalBookList extends StatelessWidget {
         onPressed: (){
           Navigator.push(context, PageTransition(
             type: PageTransitionType.fade,
-            child: Detail(book: book,),
+            child: Detail(book: book),
             isIos: true,
             reverseDuration: const Duration(milliseconds: 300),
             duration: const Duration(milliseconds: 400),

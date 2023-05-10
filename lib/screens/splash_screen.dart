@@ -19,11 +19,11 @@ class _SplashScreenState extends State<SplashScreen> {
         screenStart = true;
       });
     });
-    Future.delayed(const Duration(seconds: 3)).then((_) {
-      Navigator.pushReplacement(context, PageTransition(
-          child: const Wrapper(),
-          type: PageTransitionType.fade));
-    });
+    // Future.delayed(const Duration(seconds: 3)).then((_) {
+    //   Navigator.pushReplacement(context, PageTransition(
+    //       child: const Wrapper(),
+    //       type: PageTransitionType.fade));
+    // });
     super.initState();
   }
 
@@ -75,7 +75,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         )
                       ],
                     ),
-                    const Text('Starbhak Library',
+                    Text('(Starbhak Library)',
                         style: TextStyle(
                             fontSize: 20.0,
                             color: Colors.white,
@@ -85,7 +85,11 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
               ),
             ),
-            AnimatedPositioned(
+            Flexible(
+              flex:1 ,fit: FlexFit.loose,
+              child: Stack(
+                children: [
+                  AnimatedPositioned(
               bottom: screenStart ? 60 : -300,
               right: 200,
               height: 150,
@@ -163,6 +167,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         Border.all(color: const Color(0xFFFFFFFF), width: 30)),
               ),
             ),
+          
             AnimatedPositioned(
               bottom: screenStart ? -150 : -300,
               right: 180,
@@ -179,7 +184,10 @@ class _SplashScreenState extends State<SplashScreen> {
                         Border.all(color: const Color(0xFF01B58A), width: 30)),
               ),
             ),
-          ],
+          
+                ],
+            )),
+            ],
         ),
       ),
     );
