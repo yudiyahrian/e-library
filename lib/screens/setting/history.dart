@@ -39,12 +39,17 @@ class _HistoryState extends State<History> {
               height: 62,
               color: bgOnBoard,
               child: Row(
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.only(left: 15, right: 3),
-                    child: Icon(Icons.close, size: 37,color: Colors.white,),
+                children: [
+                  GestureDetector(
+                    child: const Padding(
+                      padding: EdgeInsets.only(left: 15, right: 3),
+                      child: Icon(Icons.close, size: 37,color: Colors.white,),
+                    ),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
                   ),
-                  Text(
+                  const Text(
                       'History',
                     style: TextStyle(
                         decoration: TextDecoration.none,

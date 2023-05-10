@@ -62,9 +62,10 @@ class _SetupState extends State<Setup> {
     return Container(
       color: bgOnBoard,
       child: ListView(
+        physics: const BouncingScrollPhysics(),
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 30, bottom: 70),
+            padding: const EdgeInsets.only(top: 30, bottom: 40),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -97,7 +98,7 @@ class _SetupState extends State<Setup> {
             ),
           ),
           SizedBox(
-            height: 430,
+            height: MediaQuery.of(context).size.height - 255,
             child: PageView(
               controller: _pageController,
               children: pages,

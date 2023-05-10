@@ -48,6 +48,10 @@ dependencies:
   flutter_svg: ^2.0.5
   carousel_slider: ^4.2.1
   curved_carousel: ^0.0.7
+  dotted_decoration: ^2.0.0
+  google_nav_bar: ^5.0.6
+  water_drop_nav_bar: ^2.2.0+5
+  page_transition: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +79,8 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/images/setting/
+    - assets/images/interest/
     - assets/images/genre/
     - assets/images/book/
     - assets/images/carousel/
@@ -104,16 +110,15 @@ flutter:
           weight: 600
         - asset: fonts/Quicksand-Bold.ttf
           weight: 700
-          
-   - family: Quicksand
-      fonts:
-        - asset: assets/fonts/Quicksand/Quicksand-Medium.ttf
     - family: Quicksand bold
       fonts:
-        - asset: assets/fonts/Quicksand/Quicksand-SemiBold.ttf
+        - asset: fonts/Quicksand-SemiBold.ttf
     - family: Quicksand medium
       fonts:
-        - asset: assets/fonts/Quicksand/Quicksand-Medium.ttf
+        - asset: fonts/Quicksand-Medium.ttf
+    - family: CustomIcons
+      fonts:
+        - asset: fonts/CustomIcons.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
