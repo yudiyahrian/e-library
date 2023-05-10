@@ -10,7 +10,6 @@ class Product extends StatefulWidget {
 }
 
 class _ProductState extends State<Product> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,21 +58,34 @@ class _ProductState extends State<Product> {
                                   borderSide: BorderSide.none,
                                 ),
                                 hintText: "Titles, authors or topics . . . .",
-                                hintStyle:  const TextStyle(
-                                    fontWeight: FontWeight.normal,
+                                hintStyle: const TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'Quick Sand',
                                     color: Color(0xFF4E4E4E),
-                                    fontSize: 16
+                                    fontSize: 14),
+                                prefixIcon: IconButton(
+                                  icon: Icon(Icons.search),
+                                  iconSize: 30,
+                                  onPressed: () {
+                                    setState(() {
+                                      
+                                    });
+                                  },
                                 ),
-                                prefixIcon: const Icon(Icons.search, size: 30,),
                                 prefixIconColor: const Color(0xFF4E4E4E)),
                           ),
                         ),
                       ),
-                      const SizedBox(width: 20,),
+                      const SizedBox(
+                        width: 20,
+                      ),
                       const Flexible(
                           flex: 2,
-                          child: Icon(Icons.notifications_none_rounded, color: Colors.white, size: 40,)
-                      )
+                          child: Icon(
+                            Icons.notifications_none_rounded,
+                            color: Colors.white,
+                            size: 40,
+                          ))
                     ],
                   ),
                 ),
@@ -89,18 +101,17 @@ class _ProductState extends State<Product> {
                         fontSize: 24,
                         letterSpacing: 3,
                         fontWeight: FontWeight.w700,
-                        color: Color(0xFFF7FDFD)
-                    ),
+                        fontFamily: 'Quick Sand',
+                        color: Color(0xFFF7FDFD)),
                   ),
                   const Spacer(),
                   Container(
                     width: 30,
                     height: 30,
                     decoration: const BoxDecoration(
-                        color: Color(0xFF758281),
-                        shape: BoxShape.circle
-                    ),
-                    child: const Icon(Icons.arrow_forward_ios_rounded, size: 18, color: Colors.white),
+                        color: Color(0xFF758281), shape: BoxShape.circle),
+                    child: const Icon(Icons.arrow_forward_ios_rounded,
+                        size: 18, color: Colors.white),
                   )
                 ],
               ),
@@ -110,7 +121,9 @@ class _ProductState extends State<Product> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 30),
                 child: Column(
-                  children: popularBook.map((book) => PopularBookList(book: book)).toList(),
+                  children: popularBook
+                      .map((book) => PopularBookList(book: book))
+                      .toList(),
                 ),
               ),
             ),
@@ -123,17 +136,17 @@ class _ProductState extends State<Product> {
                     style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white
-                    ),
+                        fontFamily: 'Quick Sand',
+                        color: Colors.white),
                   ),
                   const Spacer(),
                   Text(
                     '${books.length.toString()} books',
                     style: const TextStyle(
                         fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white
-                    ),
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Quick Sand',
+                        color: Colors.white),
                   )
                 ],
               ),

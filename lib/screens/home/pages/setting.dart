@@ -40,7 +40,7 @@ class _SettingState extends State<Setting> {
         elevation: 0,
         title: const Text(
           "Settings",
-          style: TextStyle(fontSize: 26),
+          style: TextStyle(fontSize: 26,fontFamily: 'Quick Sand',fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -96,8 +96,10 @@ class _SettingState extends State<Setting> {
                                     child: Text(
                                       userData.name,
                                       style: const TextStyle(
-                                        fontSize: 20.0,
+                                        fontSize: 22.0,
                                         color: Colors.white,
+                                        fontFamily: 'Quick Sand',
+                                        fontWeight: FontWeight.w700
                                       ),
                                     ),
                                   ),
@@ -108,6 +110,8 @@ class _SettingState extends State<Setting> {
                                       style: const TextStyle(
                                         fontSize: 15.0,
                                         color: Colors.white,
+                                        fontFamily: 'Quick Sand',
+                                        fontWeight: FontWeight.w500
                                       ),
                                     ),
                                   ),
