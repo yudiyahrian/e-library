@@ -63,7 +63,7 @@ List<Book> books = [
   ),
   Book(
       image: 'percy_jackson.png',
-      title: 'Blue Lock',
+      title: 'Percy Jackson',
       author: 'Rick Diordan',
       description: 'Aku Percy Jackson. Aku sudah dikeluarkan dari sekolah berkali-kali, sebagian karena aku penyandang disleksia dan GPPH (Gangguan Pemusatan Perhatian dan Hiperaktif), sebagian lagi karena masalah sepertinya suka sekali mengejarku ke mana pun aku pergi. Yang lebih buruk lagi, aku ternyata demigod. Kalau menurutmu memiliki orang tua dewata itu menyenangkan, kau salah. Sebagai demigod, kami harus menjalani misi dan menjadi pahlawan, yang berarti kami selalu diburu monster, dibenci oleh kebanyakan dewa, dan seringnya mati muda.',
       genre: 'Romance',
