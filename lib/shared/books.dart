@@ -58,7 +58,8 @@ class BookList extends StatelessWidget {
                   style: const TextStyle(
                       color: Colors.white,
                       fontSize: 18,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w800,
+                      fontFamily: 'Quick Sand',
                       decoration: TextDecoration.underline
                   ),
                 ),
@@ -72,7 +73,8 @@ class BookList extends StatelessWidget {
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 13,
-                        fontWeight: FontWeight.normal,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Quick Sand'
                       ),
                     ),
                   ),
@@ -137,7 +139,8 @@ class HorizontalBookList extends StatelessWidget {
                 Text(
                   book.author,
                   style: const TextStyle(
-                      fontFamily: "Quicksand",
+                      fontFamily: "Quick Sand",
+                      fontWeight: FontWeight.w500,
                       fontSize: 12,
                       // letterSpacing: 10,
                       // fontWeight: FontWeight.w500,
@@ -238,13 +241,14 @@ class _PopularBookListState extends State<PopularBookList> {
               widget.book.title,
               style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 15,
+                  fontSize: 17,
                   fontWeight: FontWeight.w700,
+                  fontFamily: 'Quick Sand',
                   decoration: TextDecoration.underline
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(5.0),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width - 230,
                 height: 50,
@@ -253,7 +257,7 @@ class _PopularBookListState extends State<PopularBookList> {
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 10,
-                    fontWeight: FontWeight.normal,
+                    fontFamily: 'Quicksand medium'
                   ),
                 ),
               ),

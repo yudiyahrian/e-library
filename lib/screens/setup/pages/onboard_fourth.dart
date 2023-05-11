@@ -40,7 +40,7 @@ class OnboardFourth extends StatelessWidget {
           ),
         ),
         Container(
-          height: 116,
+          height: 200,
           margin: const EdgeInsets.symmetric(horizontal: 20),
           child: RawScrollbar(
             controller: _controller,

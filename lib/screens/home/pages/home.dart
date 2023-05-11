@@ -58,9 +58,10 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     hintText: "Titles, authors or topics . . . .",
                                     hintStyle:  const TextStyle(
-                                        fontWeight: FontWeight.normal,
+                                        fontFamily: 'Quick Sand',
+                                        fontWeight: FontWeight.w500,
                                         color: Color(0xFF4E4E4E),
-                                        fontSize: 16
+                                        fontSize: 14
                                     ),
                                     prefixIcon: const Icon(Icons.search, size: 30,),
                                     prefixIconColor: const Color(0xFF4E4E4E)),
@@ -221,6 +222,7 @@ class _HomePageState extends State<HomePage> {
                             style: TextStyle(
                               fontSize: 24.0,
                               fontWeight: FontWeight.w700,
+                              fontFamily: 'Quick Sand',
                               color: Colors.white,
                             ),
                           ),
@@ -254,7 +256,7 @@ class _HomePageState extends State<HomePage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(6),
                                       child: Image.asset(
-                                        "assets/images/genre/horor.jpg",
+                                        "assets/images/genre/horror.jpg",
                                         colorBlendMode: BlendMode.darken,
                                         color: Colors.black45,
                                         fit: BoxFit.cover,
@@ -272,11 +274,11 @@ class _HomePageState extends State<HomePage> {
                                     padding: const EdgeInsets.only(
                                         top: 90.0, left: 10.0),
                                     height: 120,
-                                    width: 90,
+                                    width: 120,
                                     child: const Text(
-                                      "Horor",
+                                      "Horror",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 25.0),
+                                          color: Colors.white, fontSize: 25.0,fontFamily: 'Quick Sand',fontWeight: FontWeight.w700),
                                     ),
                                   ),
                                 ),
@@ -305,7 +307,7 @@ class _HomePageState extends State<HomePage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(6),
                                       child: Image.asset(
-                                        "assets/images/genre/inspiration.jpg",
+                                        "assets/images/genre/Inspiraion-genre.jpg",
                                         colorBlendMode: BlendMode.darken,
                                         color: Colors.black45,
                                         fit: BoxFit.cover,
@@ -327,7 +329,7 @@ class _HomePageState extends State<HomePage> {
                                     child: const Text(
                                       "Inspiration",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 25.0),
+                                          color: Colors.white, fontSize: 25.0,fontFamily: 'Quick Sand',fontWeight: FontWeight.w700),
                                     ),
                                   ),
                                 ),
@@ -359,7 +361,7 @@ class _HomePageState extends State<HomePage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(6),
                                       child: Image.asset(
-                                        "assets/images/genre/romance.jpg",
+                                        "assets/images/genre/romance-genre.jpg",
                                         colorBlendMode: BlendMode.darken,
                                         color: Colors.black45,
                                         fit: BoxFit.cover,
@@ -379,11 +381,11 @@ class _HomePageState extends State<HomePage> {
                                       left: 10.0,
                                     ),
                                     height: 120,
-                                    width: 120,
+                                    width: 160,
                                     child: const Text(
                                       "Romance",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 25.0),
+                                          color: Colors.white, fontSize: 25.0,fontFamily: 'Quick Sand',fontWeight: FontWeight.w700),
                                     ),
                                   ),
                                 ),
@@ -412,7 +414,7 @@ class _HomePageState extends State<HomePage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(6),
                                       child: Image.asset(
-                                        "assets/images/genre/fantasy.jpg",
+                                        "assets/images/genre/fantasy-genre.jpg",
                                         colorBlendMode: BlendMode.darken,
                                         color: Colors.black45,
                                         fit: BoxFit.cover,
@@ -430,11 +432,11 @@ class _HomePageState extends State<HomePage> {
                                     padding: const EdgeInsets.only(
                                         top: 90.0, left: 10.0),
                                     height: 120,
-                                    width: 100,
+                                    width: 150,
                                     child: const Text(
                                       "Fantasy",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 25.0),
+                                          color: Colors.white, fontSize: 25.0,fontFamily: 'Quick Sand',fontWeight: FontWeight.w700),
                                     ),
                                   ),
                                 ),
@@ -466,7 +468,7 @@ class _HomePageState extends State<HomePage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(6),
                                       child: Image.asset(
-                                        "assets/images/genre/history.jpg",
+                                        "assets/images/genre/history-genre.jpg",
                                         colorBlendMode: BlendMode.darken,
                                         color: Colors.black45,
                                         fit: BoxFit.cover,
@@ -488,7 +490,7 @@ class _HomePageState extends State<HomePage> {
                                     child: const Text(
                                       "History",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 25.0),
+                                          color: Colors.white, fontSize: 25.0,fontFamily: 'Quick Sand',fontWeight: FontWeight.w700),
                                     ),
                                   ),
                                 ),
@@ -517,7 +519,7 @@ class _HomePageState extends State<HomePage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(6),
                                       child: Image.asset(
-                                        "assets/images/genre/comedy.jpg",
+                                        "assets/images/genre/humor.jpg",
                                         colorBlendMode: BlendMode.darken,
                                         color: Colors.black45,
                                         fit: BoxFit.fill,
@@ -539,7 +541,7 @@ class _HomePageState extends State<HomePage> {
                                     child: const Text(
                                       "Comedy",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 25.0),
+                                          color: Colors.white, fontSize: 25.0,fontFamily: 'Quick Sand',fontWeight: FontWeight.w700),
                                     ),
                                   ),
                                 ),
@@ -571,7 +573,7 @@ class _HomePageState extends State<HomePage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(6),
                                       child: Image.asset(
-                                        "assets/images/genre/sicense.jpg",
+                                        "assets/images/genre/science-fiction.jpg",
                                         colorBlendMode: BlendMode.darken,
                                         color: Colors.black45,
                                         fit: BoxFit.cover,
@@ -595,7 +597,7 @@ class _HomePageState extends State<HomePage> {
                                     child: const Text(
                                       "Science Fiction",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 20.0),
+                                          color: Colors.white, fontSize: 20.0,fontFamily: 'Quick Sand',fontWeight: FontWeight.w700),
                                     ),
                                   ),
                                 ),
@@ -624,7 +626,7 @@ class _HomePageState extends State<HomePage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(6),
                                       child: Image.asset(
-                                        "assets/images/genre/adventure.jpg",
+                                        "assets/images/genre/adventure-genre.jpg",
                                         colorBlendMode: BlendMode.darken,
                                         color: Colors.black45,
                                         fit: BoxFit.cover,
@@ -646,7 +648,7 @@ class _HomePageState extends State<HomePage> {
                                     child: const Text(
                                       "Adventure",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 25.0),
+                                          color: Colors.white, fontSize: 25.0,fontFamily: 'Quick Sand',fontWeight: FontWeight.w700),
                                     ),
                                   ),
                                 ),
