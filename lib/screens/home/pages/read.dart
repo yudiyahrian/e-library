@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:e_library/models/book.dart';
 
 class ReadPage extends StatefulWidget {
-  const ReadPage({super.key});
+  final Book book;
+  const ReadPage({super.key, required this.book});
 
   @override
   State<ReadPage> createState() => _ReadPageState();
@@ -36,7 +38,7 @@ class _ReadPageState extends State<ReadPage> {
                         margin: const EdgeInsets.only(top: 10),
                         width: 120,
                         child: Image.asset(
-                          "assets/images/book/filosofi.jpg",
+                          "assets/${widget.book.image}",
                         ),
                       ),
                       Container(
@@ -44,8 +46,8 @@ class _ReadPageState extends State<ReadPage> {
                           children: [
                             Container(
                               margin: const EdgeInsets.only(top: 10),
-                              child: const Text(
-                                "Filosofi beras",
+                              child: Text(
+                                widget.book.title,
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
@@ -54,8 +56,8 @@ class _ReadPageState extends State<ReadPage> {
                               ),
                             ),
                             Container(
-                              child: const Text(
-                                "Henry Managelas",
+                              child: Text(
+                                widget.book.author,
                                 style: TextStyle(
                                   fontFamily: "Quick Sand",
                                   fontSize: 19,
@@ -69,7 +71,7 @@ class _ReadPageState extends State<ReadPage> {
                       ),
                       Container(
                         width: double.maxFinite,
-                        margin: const EdgeInsets.only(top:20, left: 7),
+                        margin: const EdgeInsets.only(top: 20, left: 7),
                         child: const Text(
                           "86 Bab",
                           style: TextStyle(
@@ -91,7 +93,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, bottom: 15, top: 15),
                                   child: const Text(
                                     "Bab 1",
                                     style: TextStyle(
@@ -100,8 +103,7 @@ class _ReadPageState extends State<ReadPage> {
                                         fontFamily: "Quick Sand"),
                                   ),
                                 )),
-                                Container(
-
+                            Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
@@ -110,7 +112,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, bottom: 15, top: 15),
                                   child: const Text(
                                     "Bab 2",
                                     style: TextStyle(
@@ -119,8 +122,7 @@ class _ReadPageState extends State<ReadPage> {
                                         fontFamily: "Quick Sand"),
                                   ),
                                 )),
-                                Container(
-
+                            Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
@@ -129,7 +131,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, bottom: 15, top: 15),
                                   child: const Text(
                                     "Bab 3",
                                     style: TextStyle(
@@ -138,8 +141,7 @@ class _ReadPageState extends State<ReadPage> {
                                         fontFamily: "Quick Sand"),
                                   ),
                                 )),
-                                Container(
-
+                            Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
@@ -148,7 +150,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, bottom: 15, top: 15),
                                   child: const Text(
                                     "Bab 4",
                                     style: TextStyle(
@@ -157,8 +160,7 @@ class _ReadPageState extends State<ReadPage> {
                                         fontFamily: "Quick Sand"),
                                   ),
                                 )),
-                                Container(
-
+                            Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
@@ -167,7 +169,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, bottom: 15, top: 15),
                                   child: const Text(
                                     "Bab 5",
                                     style: TextStyle(
@@ -176,8 +179,7 @@ class _ReadPageState extends State<ReadPage> {
                                         fontFamily: "Quick Sand"),
                                   ),
                                 )),
-                                Container(
-
+                            Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
@@ -186,7 +188,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, bottom: 15, top: 15),
                                   child: const Text(
                                     "Bab 6",
                                     style: TextStyle(
@@ -195,8 +198,7 @@ class _ReadPageState extends State<ReadPage> {
                                         fontFamily: "Quick Sand"),
                                   ),
                                 )),
-                                Container(
-
+                            Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
@@ -205,7 +207,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, bottom: 15, top: 15),
                                   child: const Text(
                                     "Bab 7",
                                     style: TextStyle(
@@ -214,8 +217,7 @@ class _ReadPageState extends State<ReadPage> {
                                         fontFamily: "Quick Sand"),
                                   ),
                                 )),
-                                Container(
-
+                            Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
@@ -224,7 +226,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, bottom: 15, top: 15),
                                   child: const Text(
                                     "Bab 8",
                                     style: TextStyle(
@@ -233,8 +236,7 @@ class _ReadPageState extends State<ReadPage> {
                                         fontFamily: "Quick Sand"),
                                   ),
                                 )),
-                                Container(
-
+                            Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
@@ -243,7 +245,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, bottom: 15, top: 15),
                                   child: const Text(
                                     "Bab 9",
                                     style: TextStyle(
@@ -252,8 +255,7 @@ class _ReadPageState extends State<ReadPage> {
                                         fontFamily: "Quick Sand"),
                                   ),
                                 )),
-                                Container(
-
+                            Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
@@ -262,7 +264,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, bottom: 15, top: 15),
                                   child: const Text(
                                     "Bab 10",
                                     style: TextStyle(
@@ -271,8 +274,7 @@ class _ReadPageState extends State<ReadPage> {
                                         fontFamily: "Quick Sand"),
                                   ),
                                 )),
-                                Container(
-
+                            Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
@@ -281,7 +283,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, bottom: 15, top: 15),
                                   child: const Text(
                                     "Bab 11",
                                     style: TextStyle(
@@ -290,8 +293,7 @@ class _ReadPageState extends State<ReadPage> {
                                         fontFamily: "Quick Sand"),
                                   ),
                                 )),
-                                Container(
-
+                            Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
@@ -300,7 +302,8 @@ class _ReadPageState extends State<ReadPage> {
                                 ))),
                                 width: double.maxFinite,
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, bottom: 15, top: 15),
                                   child: const Text(
                                     "Bab 12",
                                     style: TextStyle(
@@ -309,14 +312,12 @@ class _ReadPageState extends State<ReadPage> {
                                         fontFamily: "Quick Sand"),
                                   ),
                                 )),
-                                
                           ],
                         ),
                       )
                     ],
                   ),
                 ),
-                
               ],
             ),
           ),
@@ -334,8 +335,8 @@ class _ReadPageState extends State<ReadPage> {
                       color: Colors.white,
                       size: 35,
                     ))),
-            title: const Text(
-              "Filosofi Teras",
+            title: Text(
+              widget.book.title,
               style: TextStyle(
                   fontFamily: "Quick Sand",
                   fontWeight: FontWeight.bold,

@@ -484,7 +484,7 @@ class _DetailState extends State<Detail> {
               ElevatedButton(
                   onPressed: (){
                     Navigator.push(context, PageTransition(
-                    child: const ReadPage(),
+                    child: ReadPage(book: widget.book,),
                     type: PageTransitionType.fade
                     ));
                   },
