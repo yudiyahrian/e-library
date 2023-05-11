@@ -383,6 +383,7 @@ class _ProfileState extends State<Profile> {
                                   ),
                                   TextFormField(
                                     initialValue: userData.phoneNumber,
+                                    keyboardType: TextInputType.number,
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,

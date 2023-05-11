@@ -12,19 +12,22 @@ class BookList extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, PageTransition(
-        type: PageTransitionType.fade,
-        child: Detail(book: book,),
-        isIos: true,
-        reverseDuration: const Duration(milliseconds: 300),
-        duration: const Duration(milliseconds: 400),
-        )
-        );
+        Navigator.push(
+            context,
+            PageTransition(
+              type: PageTransitionType.fade,
+              child: Detail(
+                book: book,
+              ),
+              isIos: true,
+              reverseDuration: const Duration(milliseconds: 300),
+              duration: const Duration(milliseconds: 400),
+            ));
       },
       child: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(20,10, 0, 10),
+            padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
             child: Container(
               height: 120,
               width: 90,
@@ -32,9 +35,7 @@ class BookList extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5),
                   image: DecorationImage(
                       image: AssetImage('assets/${book.image}'),
-                      fit: BoxFit.fill
-                  )
-              ),
+                      fit: BoxFit.fill)),
             ),
           ),
           Padding(
@@ -43,9 +44,7 @@ class BookList extends StatelessWidget {
               width: 1.5,
               height: 95,
               decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(5)
-              ),
+                  color: Colors.white, borderRadius: BorderRadius.circular(5)),
             ),
           ),
           SizedBox(
@@ -60,22 +59,20 @@ class BookList extends StatelessWidget {
                       fontSize: 18,
                       fontWeight: FontWeight.w800,
                       fontFamily: 'Quick Sand',
-                      decoration: TextDecoration.underline
-                  ),
+                      decoration: TextDecoration.underline),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width - 169,
-                    height: 90,
+                    height: 90.0,
                     child: Text(
                       book.description,
                       style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'Quick Sand'
-                      ),
+                          color: Colors.white,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Quick Sand'),
                     ),
                   ),
                 ),
@@ -97,14 +94,16 @@ class HorizontalBookList extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 50),
       child: TextButton(
-        onPressed: (){
-          Navigator.push(context, PageTransition(
-            type: PageTransitionType.fade,
-            child: Detail(book: book),
-            isIos: true,
-            reverseDuration: const Duration(milliseconds: 300),
-            duration: const Duration(milliseconds: 400),
-          ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            PageTransition(
+              type: PageTransitionType.fade,
+              child: Detail(book: book),
+              isIos: true,
+              reverseDuration: const Duration(milliseconds: 300),
+              duration: const Duration(milliseconds: 400),
+            ),
           );
         },
         child: Column(
@@ -155,7 +154,6 @@ class HorizontalBookList extends StatelessWidget {
   }
 }
 
-
 class PopularBookList extends StatefulWidget {
   final PopularBook book;
   const PopularBookList({Key? key, required this.book}) : super(key: key);
@@ -165,52 +163,49 @@ class PopularBookList extends StatefulWidget {
 }
 
 class _PopularBookListState extends State<PopularBookList> {
-
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        widget.book.ranking == '1' ?
-        Container(
-          height: 40,
-          width: 40,
-          decoration: const BoxDecoration(
-              color: btnColor,
-              shape: BoxShape.circle,
-          ),
-          child: Center(
-            child: Text(
-              widget.book.ranking,
-              style: const TextStyle(
-                fontFamily: 'Quick Sand',
-                fontWeight: FontWeight.w700,
-                fontSize: 24,
-                color: Colors.white
+        widget.book.ranking == '1'
+            ? Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: btnColor,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    widget.book.ranking,
+                    style: const TextStyle(
+                        fontFamily: 'Quick Sand',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: Colors.white),
+                  ),
+                ),
+              )
+            : Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFBABABA),
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    widget.book.ranking,
+                    style: const TextStyle(
+                        fontFamily: 'Quick Sand',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: Color(0xFF0C1717)),
+                  ),
+                ),
               ),
-            ),
-          ),
-        )
-        : Container(
-          height: 40,
-          width: 40,
-          decoration: const BoxDecoration(
-            color: Color(0xFFBABABA),
-            shape: BoxShape.circle,
-          ),
-          child: Center(
-            child: Text(
-              widget.book.ranking,
-              style: const TextStyle(
-                  fontFamily: 'Quick Sand',
-                  fontWeight: FontWeight.w700,
-                  fontSize: 24,
-                  color: Color(0xFF0C1717)
-              ),
-            ),
-          ),
-        ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(20,10, 0, 10),
+          padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
           child: Container(
             height: 90,
             width: 70,
@@ -218,9 +213,7 @@ class _PopularBookListState extends State<PopularBookList> {
                 borderRadius: BorderRadius.circular(5),
                 image: DecorationImage(
                     image: AssetImage('assets/${widget.book.image}'),
-                    fit: BoxFit.fill
-                )
-            ),
+                    fit: BoxFit.fill)),
           ),
         ),
         Padding(
@@ -229,9 +222,7 @@ class _PopularBookListState extends State<PopularBookList> {
             width: 1.5,
             height: 75,
             decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5)
-            ),
+                color: Colors.white, borderRadius: BorderRadius.circular(5)),
           ),
         ),
         Column(
@@ -244,8 +235,7 @@ class _PopularBookListState extends State<PopularBookList> {
                   fontSize: 17,
                   fontWeight: FontWeight.w700,
                   fontFamily: 'Quick Sand',
-                  decoration: TextDecoration.underline
-              ),
+                  decoration: TextDecoration.underline),
             ),
             Padding(
               padding: const EdgeInsets.all(5.0),
@@ -255,10 +245,9 @@ class _PopularBookListState extends State<PopularBookList> {
                 child: Text(
                   widget.book.description,
                   style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 10,
-                    fontFamily: 'Quicksand medium'
-                  ),
+                      color: Colors.white,
+                      fontSize: 10,
+                      fontFamily: 'Quicksand medium'),
                 ),
               ),
             ),
@@ -268,6 +257,553 @@ class _PopularBookListState extends State<PopularBookList> {
     );
   }
 }
+
+
+class PageViewRomanceList extends StatefulWidget {
+  final PageViewRomance bookR;
+  const PageViewRomanceList({Key? key, required this.bookR}) : super(key: key);
+
+  @override
+  State<PageViewRomanceList> createState() => _PageViewRomanceListState();
+}
+
+class _PageViewRomanceListState extends State<PageViewRomanceList> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        widget.bookR.ranking == '1'
+            ? Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: btnColor,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    widget.bookR.ranking,
+                    style: const TextStyle(
+                        fontFamily: 'Quick Sand',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: Colors.white),
+                  ),
+                ),
+              )
+            : Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFBABABA),
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    widget.bookR.ranking,
+                    style: const TextStyle(
+                        fontFamily: 'Quick Sand',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: Color(0xFF0C1717)),
+                  ),
+                ),
+              ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
+          child: Container(
+            height: 90,
+            width: 70,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                image: DecorationImage(
+                    image: AssetImage('assets/${widget.bookR.image}'),
+                    fit: BoxFit.fill)),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Container(
+            width: 1.5,
+            height: 75,
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(5)),
+          ),
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: 150.0,
+              child: Text(
+                widget.bookR.title,
+                style: const TextStyle(
+                  overflow: TextOverflow.ellipsis,
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: 'Quick Sand',
+                    decoration: TextDecoration.underline),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width - 230,
+                height: 50,
+                child: Text(
+                  widget.bookR.description,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 10,
+                      fontFamily: 'Quicksand medium'),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  
+  }
+}
+
+class PageViewHorrorList extends StatefulWidget {
+  final PageViewHorror bookH;
+  const PageViewHorrorList({Key? key, required this.bookH}) : super(key: key);
+
+  @override
+  State<PageViewHorrorList> createState() => _PageViewHorrorListState();
+}
+
+class _PageViewHorrorListState extends State<PageViewHorrorList> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        widget.bookH.ranking == '1'
+            ? Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: btnColor,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    widget.bookH.ranking,
+                    style: const TextStyle(
+                        fontFamily: 'Quick Sand',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: Colors.white),
+                  ),
+                ),
+              )
+            : Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFBABABA),
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    widget.bookH.ranking,
+                    style: const TextStyle(
+                        fontFamily: 'Quick Sand',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: Color(0xFF0C1717)),
+                  ),
+                ),
+              ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
+          child: Container(
+            height: 90,
+            width: 70,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                image: DecorationImage(
+                    image: AssetImage('assets/${widget.bookH.image}'),
+                    fit: BoxFit.fill)),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Container(
+            width: 1.5,
+            height: 75,
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(5)),
+          ),
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: 150.0,
+              child: Text(
+                widget.bookH.title,
+                style: const TextStyle(
+                  overflow: TextOverflow.ellipsis,
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: 'Quick Sand',
+                    decoration: TextDecoration.underline),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width - 230,
+                height: 50,
+                child: Text(
+                  widget.bookH.description,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 10,
+                      fontFamily: 'Quicksand medium'),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  
+  }
+}
+
+class PageViewHistoryList extends StatefulWidget {
+  final PageViewHistory bookHis;
+  const PageViewHistoryList({Key? key, required this.bookHis}) : super(key: key);
+
+  @override
+  State<PageViewHistoryList> createState() => _PageViewHistoryListState();
+}
+
+class _PageViewHistoryListState extends State<PageViewHistoryList> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        widget.bookHis.ranking == '1'
+            ? Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: btnColor,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    widget.bookHis.ranking,
+                    style: const TextStyle(
+                        fontFamily: 'Quick Sand',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: Colors.white),
+                  ),
+                ),
+              )
+            : Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFBABABA),
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    widget.bookHis.ranking,
+                    style: const TextStyle(
+                        fontFamily: 'Quick Sand',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: Color(0xFF0C1717)),
+                  ),
+                ),
+              ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
+          child: Container(
+            height: 90,
+            width: 70,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                image: DecorationImage(
+                    image: AssetImage('assets/${widget.bookHis.image}'),
+                    fit: BoxFit.fill)),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Container(
+            width: 1.5,
+            height: 75,
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(5)),
+          ),
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: 150.0,
+              child: Text(
+                widget.bookHis.title,
+                style: const TextStyle(
+                  overflow: TextOverflow.ellipsis,
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: 'Quick Sand',
+                    decoration: TextDecoration.underline),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width - 230,
+                height: 50,
+                child: Text(
+                  widget.bookHis.description,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 10,
+                      fontFamily: 'Quicksand medium'),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  
+  }
+}
+
+class PageViewFantasyList extends StatefulWidget {
+  final PageViewFantasy bookFan;
+  const PageViewFantasyList({Key? key, required this.bookFan}) : super(key: key);
+
+  @override
+  State<PageViewFantasyList> createState() => _PageViewFantasyListState();
+}
+
+class _PageViewFantasyListState extends State<PageViewFantasyList> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        widget.bookFan.ranking == '1'
+            ? Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: btnColor,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    widget.bookFan.ranking,
+                    style: const TextStyle(
+                        fontFamily: 'Quick Sand',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: Colors.white),
+                  ),
+                ),
+              )
+            : Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFBABABA),
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    widget.bookFan.ranking,
+                    style: const TextStyle(
+                        fontFamily: 'Quick Sand',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: Color(0xFF0C1717)),
+                  ),
+                ),
+              ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
+          child: Container(
+            height: 90,
+            width: 70,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                image: DecorationImage(
+                    image: AssetImage('assets/${widget.bookFan.image}'),
+                    fit: BoxFit.fill)),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Container(
+            width: 1.5,
+            height: 75,
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(5)),
+          ),
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: 150.0,
+              child: Text(
+                widget.bookFan.title,
+                style: const TextStyle(
+                  overflow: TextOverflow.ellipsis,
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: 'Quick Sand',
+                    decoration: TextDecoration.underline),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width - 230,
+                height: 50,
+                child: Text(
+                  widget.bookFan.description,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 10,
+                      fontFamily: 'Quicksand medium'),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  
+  }
+}
+
+class PageViewAdventureList extends StatefulWidget {
+  final PageViewAdventure bookAdvent;
+  const PageViewAdventureList({Key? key, required this.bookAdvent}) : super(key: key);
+
+  @override
+  State<PageViewAdventureList> createState() => _PageViewAdventureListState();
+}
+
+class _PageViewAdventureListState extends State<PageViewAdventureList> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        widget.bookAdvent.ranking == '1'
+            ? Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: btnColor,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    widget.bookAdvent.ranking,
+                    style: const TextStyle(
+                        fontFamily: 'Quick Sand',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: Colors.white),
+                  ),
+                ),
+              )
+            : Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFBABABA),
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    widget.bookAdvent.ranking,
+                    style: const TextStyle(
+                        fontFamily: 'Quick Sand',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: Color(0xFF0C1717)),
+                  ),
+                ),
+              ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
+          child: Container(
+            height: 90,
+            width: 70,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                image: DecorationImage(
+                    image: AssetImage('assets/${widget.bookAdvent.image}'),
+                    fit: BoxFit.fill)),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Container(
+            width: 1.5,
+            height: 75,
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(5)),
+          ),
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: 150.0,
+              child: Text(
+                widget.bookAdvent.title,
+                style: const TextStyle(
+                  overflow: TextOverflow.ellipsis,
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: 'Quick Sand',
+                    decoration: TextDecoration.underline),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width - 230,
+                height: 50,
+                child: Text(
+                  widget.bookAdvent.description,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 10,
+                      fontFamily: 'Quicksand medium'),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  
+  }
+}
+
 
 
 class HistoryBookList extends StatefulWidget {
@@ -284,22 +820,22 @@ class _HistoryBookListState extends State<HistoryBookList> {
     return Container(
       margin: const EdgeInsets.fromLTRB(20, 10, 20, 10),
       decoration: BoxDecoration(
-          color: Color(0xFF335F5C),
-          borderRadius: BorderRadius.circular(8),
+        color: Color(0xFF335F5C),
+        borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(20,10, 0, 10),
+            padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
             child: Container(
               height: 120,
               width: 90,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  image: DecorationImage(
-                      image: AssetImage('assets/${widget.book.image}'),
-                      fit: BoxFit.fill,
-                  ),
+                borderRadius: BorderRadius.circular(5),
+                image: DecorationImage(
+                  image: AssetImage('assets/${widget.book.image}'),
+                  fit: BoxFit.fill,
+                ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withOpacity(0.3),
@@ -325,8 +861,7 @@ class _HistoryBookListState extends State<HistoryBookList> {
                       color: whiteColor,
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
-                      decoration: TextDecoration.none
-                  ),
+                      decoration: TextDecoration.none),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5),
@@ -337,8 +872,7 @@ class _HistoryBookListState extends State<HistoryBookList> {
                         color: greyColor,
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
-                        decoration: TextDecoration.none
-                    ),
+                        decoration: TextDecoration.none),
                   ),
                 ),
                 Padding(
@@ -350,8 +884,7 @@ class _HistoryBookListState extends State<HistoryBookList> {
                         color: greyColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
-                        decoration: TextDecoration.none
-                    ),
+                        decoration: TextDecoration.none),
                   ),
                 ),
                 Row(
@@ -364,8 +897,7 @@ class _HistoryBookListState extends State<HistoryBookList> {
                           color: greyColor,
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
-                          decoration: TextDecoration.none
-                      ),
+                          decoration: TextDecoration.none),
                     ),
                   ],
                 )
@@ -393,7 +925,7 @@ class InvoiceBookList extends StatelessWidget {
       child: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(20,10, 0, 10),
+            padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
             child: Container(
               height: 75,
               width: 50,
@@ -428,8 +960,7 @@ class InvoiceBookList extends StatelessWidget {
                       color: whiteColor,
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
-                      decoration: TextDecoration.none
-                  ),
+                      decoration: TextDecoration.none),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5),
@@ -440,8 +971,7 @@ class InvoiceBookList extends StatelessWidget {
                         color: greyColor,
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
-                        decoration: TextDecoration.none
-                    ),
+                        decoration: TextDecoration.none),
                   ),
                 ),
                 Text(
@@ -451,8 +981,7 @@ class InvoiceBookList extends StatelessWidget {
                       color: Colors.white,
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
-                      decoration: TextDecoration.none
-                  ),
+                      decoration: TextDecoration.none),
                 ),
               ],
             ),
@@ -467,8 +996,7 @@ class InvoiceBookList extends StatelessWidget {
                     color: greyColor,
                     fontSize: 17,
                     fontWeight: FontWeight.w600,
-                    decoration: TextDecoration.none
-                ),
+                    decoration: TextDecoration.none),
               ),
             ],
           )
@@ -487,7 +1015,6 @@ class DetailBookImage extends StatefulWidget {
 }
 
 class _DetailBookImageState extends State<DetailBookImage> {
-
   final PageController _pageController = PageController(
     initialPage: 1,
     viewportFraction: 0.6,
