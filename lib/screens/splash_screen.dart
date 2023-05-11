@@ -49,16 +49,16 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Center(
               child: Container(
-                margin: const EdgeInsets.only(bottom: 100, top: 180),
+                margin: const EdgeInsets.only(bottom: 100, top: 190),
                 child: AnimatedOpacity(
                   opacity: visible ? 1.0 : 0.0,
-                  duration: Duration(milliseconds: 600),
+                  duration: Duration(milliseconds: 750),
                   child: Column(
                     children: [
                       Image.asset(
                         "assets/New-Icon.png",
-                        height: 140.0,
-                        width: 140.0,
+                        height: 135.0,
+                        width: 135.0,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
