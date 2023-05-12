@@ -51,7 +51,7 @@ class _FavoriteState extends State<Favorite> {
               Stack(
                 children: [
                   Container(
-                    height: 120,
+                    height: 110,
                     width: MediaQuery.of(context).size.width,
                     color: const Color(0XB311201F),
                     child: ListView(
