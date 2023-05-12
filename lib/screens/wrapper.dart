@@ -2,6 +2,7 @@ import 'package:e_library/models/user.dart';
 import 'package:e_library/screens/authenticate/setup_profile.dart';
 import 'package:e_library/screens/home/core.dart';
 import 'package:e_library/screens/home/pages/start_screen.dart';
+import 'package:e_library/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:e_library/services/database.dart';
@@ -22,7 +23,7 @@ class Wrapper extends StatelessWidget {
           return const StartScreen();
         } else if (snapshot.connectionState == ConnectionState.waiting) {
           // Show loading spinner while waiting for data to load
-          return const CircularProgressIndicator();
+          return const Loading();
         } else {
           if (snapshot.hasData) {
             final userData = snapshot.data;
@@ -32,7 +33,7 @@ class Wrapper extends StatelessWidget {
               return const HomeCore();
             }
           } else {
-            return const CircularProgressIndicator();
+            return const Loading();
           }
         }
       },

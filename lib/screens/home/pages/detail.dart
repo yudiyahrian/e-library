@@ -1,7 +1,10 @@
+import 'package:e_library/screens/home/pages/borrow_form.dart';
+import 'package:e_library/screens/home/pages/read.dart';
 import 'package:e_library/shared/books.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:e_library/models/book.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Detail extends StatefulWidget {
   final Book book;
@@ -157,38 +160,37 @@ class _DetailState extends State<Detail> {
                                         Positioned(
                                             top: 310,
                                             left: 30,
-                                            child: SingleChildScrollView(
-                                              child: Column(
-                                                  children: <Widget>[
-                                                    Text(
-                                                      widget.book.title,
-                                                        textAlign: TextAlign.center,
-                                                        style: const TextStyle(
-                                                          color: Colors.white,
-                                                          fontFamily: 'Quick Sand',
-                                                          fontSize: 27,
-                                                          decoration: TextDecoration.none,
-                                                          fontWeight: FontWeight.w700,
-                                                          height: 2
-                                                      ),
+                                            child: Column(
+                                                children: <Widget>[
+                                                  Text(
+                                                    widget.book.title,
+                                                      textAlign: TextAlign.center,
+                                                      style: const TextStyle(
+                                                        color: Colors.white,
+                                                        fontFamily: 'Quick Sand',
+                                                        fontSize: 27,
+                                                        decoration: TextDecoration.none,
+                                                        fontWeight: FontWeight.w700,
+                                                        height: 2
                                                     ),
-                                                    SizedBox(
-                                                      width: 300,
-                                                      child: Text(
-                                                        widget.book.description,
-                                                        textAlign: TextAlign.center,
-                                                        style: const TextStyle(
-                                                          color: Colors.white,
-                                                          fontFamily: 'Quick Sand',
-                                                          fontSize: 12,
-                                                          decoration: TextDecoration.none,
-                                                          fontWeight: FontWeight.w600,
-                                                          height: 1
-                                                      ),
-                                                      ),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 300,
+                                                    height: 48,
+                                                    child: Text(
+                                                      widget.book.description,
+                                                      textAlign: TextAlign.center,
+                                                      style: const TextStyle(
+                                                        color: Colors.white,
+                                                        fontFamily: 'Quick Sand',
+                                                        fontSize: 12,
+                                                        decoration: TextDecoration.none,
+                                                        fontWeight: FontWeight.w600,
+                                                        height: 1
                                                     ),
-                                                  ]
-                                              ),
+                                                    ),
+                                                  ),
+                                                ]
                                             )
                                         ),
                                       ]
@@ -437,6 +439,9 @@ class _DetailState extends State<Detail> {
                           height: 2
                       ),
                     ),
+                    SizedBox(
+                      height: 40.0,
+                    )
                   ],
                 ),
               ),
@@ -453,7 +458,12 @@ class _DetailState extends State<Detail> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(context, PageTransition(
+                        child: BorrowForm(bookName: widget.book.title,),
+                        type: PageTransitionType.fade
+                    ));
+                  },
                   style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(10)),
                       backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFFFFB800)),
@@ -475,7 +485,12 @@ class _DetailState extends State<Detail> {
                   )
               ),
               ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(context, PageTransition(
+                    child: ReadPage(book: widget.book,),
+                    type: PageTransitionType.fade
+                    ));
+                  },
                   style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.symmetric(vertical: 10, horizontal: 15)),
                       backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF009A75)),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:e_library/models/book.dart';
+import 'package:e_library/shared/book_data.dart';
 import 'package:e_library/shared/books.dart';
 
 class Product extends StatefulWidget {
@@ -10,22 +10,6 @@ class Product extends StatefulWidget {
 }
 
 class _ProductState extends State<Product> {
-
-  List<PopularBook> popularBook = [
-    PopularBook(image: 'the_art_of_loving.png', title: 'The Art Of Loving', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f', genre: 'Romance', ranking: '1'),
-    PopularBook(image: 'the_art_of_loving.png', title: 'The Art Of Loving', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f', genre: 'Romance', ranking: '2'),
-    PopularBook(image: 'the_art_of_loving.png', title: 'The Art Of Loving', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f', genre: 'Romance', ranking: '3'),
-  ];
-
-  List<Book> books = [
-    Book(image: 'the_art_of_loving.png', title: 'The Art Of Loving', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'filosopi_teras.png', title: 'Filosofi Teras', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'seribu_wajah_ayah.png', title: 'Seribu Wajah Ayah', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'psychology_of_money.png', title: 'Psychology Of Money', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'blue_lock.png', title: 'Blue Lock', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'mata_rahasia_pulau.png', title: 'Mata dan rahasia pulau gapi', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +35,7 @@ class _ProductState extends State<Product> {
             Stack(
               children: [
                 Container(
-                  height: 80,
+                  height: 70,
                   width: MediaQuery.of(context).size.width,
                   color: const Color(0XB311201F),
                 ),
@@ -74,81 +58,287 @@ class _ProductState extends State<Product> {
                                   borderSide: BorderSide.none,
                                 ),
                                 hintText: "Titles, authors or topics . . . .",
-                                hintStyle:  const TextStyle(
-                                    fontWeight: FontWeight.normal,
+                                hintStyle: const TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'Quick Sand',
                                     color: Color(0xFF4E4E4E),
-                                    fontSize: 16
+                                    fontSize: 14),
+                                prefixIcon: IconButton(
+                                  icon: Icon(Icons.search),
+                                  iconSize: 30,
+                                  onPressed: () {
+                                    setState(() {});
+                                  },
                                 ),
-                                prefixIcon: const Icon(Icons.search, size: 30,),
                                 prefixIconColor: const Color(0xFF4E4E4E)),
                           ),
                         ),
                       ),
-                      const SizedBox(width: 20,),
+                      const SizedBox(
+                        width: 20,
+                      ),
                       const Flexible(
                           flex: 2,
-                          child: Icon(Icons.notifications_none_rounded, color: Colors.white, size: 40,)
-                      )
+                          child: Icon(
+                            Icons.notifications_none_rounded,
+                            color: Colors.white,
+                            size: 40,
+                          ))
                     ],
                   ),
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              child: Row(
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            //   child: Row(
+            //     children: [
+            //       const Text(
+            //         'Top Romance',
+            //         style: TextStyle(
+            //             fontSize: 24,
+            //             letterSpacing: 3,
+            //             fontWeight: FontWeight.w700,
+            //             fontFamily: 'Quick Sand',
+            //             color: Color(0xFFF7FDFD)),
+            //       ),
+            //       const Spacer(),
+            //       Container(
+            //         width: 30,
+            //         height: 30,
+            //         decoration: const BoxDecoration(
+            //             color: Color(0xFF758281), shape: BoxShape.circle),
+            //         child: const Icon(Icons.arrow_forward_ios_rounded,
+            //             size: 18, color: Colors.white),
+            //       )
+            //     ],
+            //   ),
+            // ),
+            // SizedBox(
+            //   height: 330,
+            //   child: Padding(
+            //     padding: const EdgeInsets.only(left: 30),
+            //     child: Column(
+            //       children: popularBook
+            //           .map((book) => PopularBookList(book: book))
+            //           .toList(),
+            //     ),
+            //   ),
+            // ),
+            Container(
+              height: 360.0,
+              child: PageView(
+                scrollDirection: Axis.horizontal,
                 children: [
-                  const Text(
-                    'Top Romance',
-                    style: TextStyle(
-                        fontSize: 24,
-                        letterSpacing: 3,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0xFFF7FDFD)
-                    ),
-                  ),
-                  const Spacer(),
                   Container(
-                    width: 30,
-                    height: 30,
-                    decoration: const BoxDecoration(
-                        color: Color(0xFF758281),
-                        shape: BoxShape.circle
-                    ),
-                    child: const Icon(Icons.arrow_forward_ios_rounded, size: 18, color: Colors.white),
-                  )
+                    margin: EdgeInsets.only(left: 15.0),
+                    child: Column(children: [
+                      Row(
+                        children: [
+                          const Text(
+                            'Top Romance',
+                            style: TextStyle(
+                                fontFamily: 'Quick Sand',
+                                fontSize: 22,
+                                letterSpacing: 3,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFFF7FDFD)),
+                          ),
+                          const Spacer(),
+                          Container(
+                            margin: EdgeInsets.only(right: 20),
+                            width: 30,
+                            height: 30,
+                            decoration: const BoxDecoration(
+                                color: Color(0xFF758281),
+                                shape: BoxShape.circle),
+                            child: const Icon(Icons.arrow_forward_ios_rounded,
+                                size: 18, color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 8.0),
+                        child: Column(
+                          children: pageviewromance
+                              .map((book) => PageViewRomanceList(bookR: book))
+                              .toList(),
+                        ),
+                      )
+                    ]),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 15.0),
+                    child: Column(children: [
+                      Row(
+                        children: [
+                          const Text(
+                            'Top Horror',
+                            style: TextStyle(
+                                fontFamily: 'Quick Sand',
+                                fontSize: 22,
+                                letterSpacing: 3,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFFF7FDFD)),
+                          ),
+                          const Spacer(),
+                          Container(
+                            margin: EdgeInsets.only(right: 20),
+                            width: 30,
+                            height: 30,
+                            decoration: const BoxDecoration(
+                                color: Color(0xFF758281),
+                                shape: BoxShape.circle),
+                            child: const Icon(Icons.arrow_forward_ios_rounded,
+                                size: 18, color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 8.0),
+                        child: Column(
+                          children: pageviewhorror
+                              .map((book) => PageViewHorrorList(bookH: book))
+                              .toList(),
+                        ),
+                      )
+                    ]),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 15.0),
+                    child: Column(children: [
+                      Row(
+                        children: [
+                          const Text(
+                            'Top History',
+                            style: TextStyle(
+                                fontFamily: 'Quick Sand',
+                                fontSize: 22,
+                                letterSpacing: 3,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFFF7FDFD)),
+                          ),
+                          const Spacer(),
+                          Container(
+                            margin: EdgeInsets.only(right: 20),
+                            width: 30,
+                            height: 30,
+                            decoration: const BoxDecoration(
+                                color: Color(0xFF758281),
+                                shape: BoxShape.circle),
+                            child: const Icon(Icons.arrow_forward_ios_rounded,
+                                size: 18, color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 8.0),
+                        child: Column(
+                          children: pageviewhistory
+                              .map((book) => PageViewHistoryList(bookHis: book))
+                              .toList(),
+                        ),
+                      )
+                    ]),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 15.0),
+                    child: Column(children: [
+                      Row(
+                        children: [
+                          const Text(
+                            'Top Fantasy',
+                            style: TextStyle(
+                                fontFamily: 'Quick Sand',
+                                fontSize: 22,
+                                letterSpacing: 3,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFFF7FDFD)),
+                          ),
+                          const Spacer(),
+                          Container(
+                            margin: EdgeInsets.only(right: 20),
+                            width: 30,
+                            height: 30,
+                            decoration: const BoxDecoration(
+                                color: Color(0xFF758281),
+                                shape: BoxShape.circle),
+                            child: const Icon(Icons.arrow_forward_ios_rounded,
+                                size: 18, color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 8.0),
+                        child: Column(
+                          children: pageviewfantasy
+                              .map((book) => PageViewFantasyList(bookFan: book))
+                              .toList(),
+                        ),
+                      )
+                    ]),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 15.0),
+                    child: Column(children: [
+                      Row(
+                        children: [
+                          const Text(
+                            'Top Adventure',
+                            style: TextStyle(
+                                fontFamily: 'Quick Sand',
+                                fontSize: 22,
+                                letterSpacing: 3,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFFF7FDFD)),
+                          ),
+                          const Spacer(),
+                          Container(
+                            margin: EdgeInsets.only(right: 20),
+                            width: 30,
+                            height: 30,
+                            decoration: const BoxDecoration(
+                                color: Color(0xFF758281),
+                                shape: BoxShape.circle),
+                            child: const Icon(Icons.arrow_forward_ios_rounded,
+                                size: 18, color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 8.0),
+                        child: Column(
+                          children: pageviewadventure
+                              .map((book) =>
+                                  PageViewAdventureList(bookAdvent: book))
+                              .toList(),
+                        ),
+                      )
+                    ]),
+                  ),
                 ],
-              ),
-            ),
-            SizedBox(
-              height: 330,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 30),
-                child: Column(
-                  children: popularBook.map((book) => PopularBookList(book: book)).toList(),
-                ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
-                children: const [
-                  Text(
+                children: [
+                  const Text(
                     'Books',
                     style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white
-                    ),
+                        fontFamily: 'Quick Sand',
+                        color: Colors.white),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
-                    '8 Books',
-                    style: TextStyle(
+                    '${books.length.toString()} books',
+                    style: const TextStyle(
                         fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white
-                    ),
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Quick Sand',
+                        color: Colors.white),
                   )
                 ],
               ),

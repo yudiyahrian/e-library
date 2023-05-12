@@ -1,9 +1,11 @@
 import 'package:e_library/models/setting.dart';
 import 'package:e_library/shared/loading.dart';
+import 'package:e_library/shared/modal.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:e_library/shared/settings.dart';
 import 'package:e_library/services/database.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:e_library/models/user.dart';
 
@@ -25,7 +27,6 @@ class _SettingState extends State<Setting> {
     SettingModel(title: 'How to use', icon: 'Paper.svg', route: '/how_to_use'),
     SettingModel(title: 'Invoice', icon: 'Password.svg', route: '/invoice'),
     SettingModel(title: 'Terms, Condition & Privacy', icon: 'security.svg', route: '/terms'),
-    SettingModel(title: 'Logout', icon: 'Logout.svg', route: '/logout'),
   ];
 
 
@@ -36,9 +37,10 @@ class _SettingState extends State<Setting> {
     final user = Provider.of<UserModel?>(context);
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: const Text(
           "Settings",
-          style: TextStyle(fontSize: 26),
+          style: TextStyle(fontSize: 26,fontFamily: 'Quick Sand',fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -94,8 +96,10 @@ class _SettingState extends State<Setting> {
                                     child: Text(
                                       userData.name,
                                       style: const TextStyle(
-                                        fontSize: 20.0,
+                                        fontSize: 22.0,
                                         color: Colors.white,
+                                        fontFamily: 'Quick Sand',
+                                        fontWeight: FontWeight.w700
                                       ),
                                     ),
                                   ),
@@ -106,6 +110,8 @@ class _SettingState extends State<Setting> {
                                       style: const TextStyle(
                                         fontSize: 15.0,
                                         color: Colors.white,
+                                        fontFamily: 'Quick Sand',
+                                        fontWeight: FontWeight.w500
                                       ),
                                     ),
                                   ),
@@ -120,6 +126,43 @@ class _SettingState extends State<Setting> {
                   Column(
                     children: settings.map((setting) => SettingList(setting: setting))
                         .toList(),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                    decoration: const BoxDecoration(
+                      color: Color(0xff1F3B3A),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12.0),
+                      ),
+                    ),
+                    child: ListTile(
+                      horizontalTitleGap: 0,
+                      title: const Text(
+                        'Logout',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Quicksand',
+                        ),
+                      ),
+                      leading: SvgPicture.asset(
+                        "assets/icon/Logout.svg",
+                        height: 24,
+                        width: 24,
+                      ),
+                      trailing: const Icon(
+                        Icons.arrow_forward_ios,
+                        size: 24.0,
+                        color: Colors.white,
+                      ),
+                      onTap: () => showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return const ModalPopup();
+                      },
+                    ),
+                  )
                   )
                 ],
               ),

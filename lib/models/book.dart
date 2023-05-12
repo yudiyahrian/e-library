@@ -1,3 +1,5 @@
+import 'package:e_library/shared/book_data.dart';
+
 class Book {
   late String image;
   late String title;
@@ -27,7 +29,12 @@ class PopularBook {
   late String genre;
   late String ranking;
 
-  PopularBook({ required this.image, required this.title, required this.description, required this.genre, required this.ranking });
+  PopularBook(
+      {required this.image,
+      required this.title,
+      required this.description,
+      required this.genre,
+      required this.ranking});
 }
 
 class HistoryBook {
@@ -37,7 +44,12 @@ class HistoryBook {
   late String lastRead;
   late String page;
 
-  HistoryBook({ required this.image, required this.title, required this.genre, required this.lastRead, required this.page });
+  HistoryBook(
+      {required this.image,
+      required this.title,
+      required this.genre,
+      required this.lastRead,
+      required this.page});
 }
 
 class InvoiceBook {
@@ -47,5 +59,56 @@ class InvoiceBook {
   late String date;
   late String id;
 
-  InvoiceBook({ required this.image, required this.title, required this.duration, required this.date, required this.id });
+  InvoiceBook(
+      {required this.image,
+      required this.title,
+      required this.duration,
+      required this.date,
+      required this.id});
+}
+
+class PageViewRomance {
+  late String image;
+  late String title;
+  late String description;
+  late String ranking;
+
+  PageViewRomance(
+      {required this.image, required this.title, required this.description, required this.ranking});
+}
+class PageViewHorror {
+  late String image;
+  late String title;
+  late String description;
+  late String ranking;
+
+  PageViewHorror(
+      {required this.image, required this.title, required this.description, required this.ranking});
+}
+class PageViewHistory {
+  late String image;
+  late String title;
+  late String description;
+  late String ranking;
+
+  PageViewHistory(
+      {required this.image, required this.title, required this.description, required this.ranking});
+}
+class PageViewFantasy {
+  late String image;
+  late String title;
+  late String description;
+  late String ranking;
+
+  PageViewFantasy(
+      {required this.image, required this.title, required this.description, required this.ranking});
+}
+class PageViewAdventure {
+  late String image;
+  late String title;
+  late String description;
+  late String ranking;
+
+  PageViewAdventure(
+      {required this.image, required this.title, required this.description, required this.ranking});
 }

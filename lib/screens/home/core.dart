@@ -48,7 +48,8 @@ class _HomeCoreState extends State<HomeCore> {
         ),
         child: WaterDropNavBar(
           backgroundColor: navigationBarColor,
-          waterDropColor: btnColor,
+          waterDropColor: Color(0xff01b58a),
+          iconSize: 28,
           bottomPadding: 20,
           inactiveIconColor: Colors.white,
           onItemSelected: (int index) {

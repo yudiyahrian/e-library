@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:e_library/models/book.dart';
+import 'package:e_library/shared/book_data.dart';
 import 'package:e_library/shared/books.dart';
 import 'package:e_library/models/genre.dart';
 import 'package:e_library/shared/genres.dart';
@@ -23,15 +23,6 @@ class _FavoriteState extends State<Favorite> {
     Genre(name: 'Isekai', active: false),
   ];
 
-  List<Book> books = [
-    Book(image: 'the_art_of_loving.png', title: 'The Art Of Loving', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'filosopi_teras.png', title: 'Filosofi Teras', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'seribu_wajah_ayah.png', title: 'Seribu Wajah Ayah', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'psychology_of_money.png', title: 'Psychology Of Money', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'blue_lock.png', title: 'Blue Lock', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-    Book(image: 'mata_rahasia_pulau.png', title: 'Mata dan rahasia pulau gapi', description: 'lorem asjdhkjsnbfcadsfjkmsenrbvawecauibxhdjkhawjbdghasbydas.tsdjnAD <SMDNafjsakh fsahfsjafasnjfhsjfnms,f'),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,11 +36,11 @@ class _FavoriteState extends State<Favorite> {
         maintainBottomViewPadding: true,
         child: Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
+            gradient: LinearGradient( 
               begin: Alignment.topLeft,
               colors: <Color>[
-                Color(0xff0b1617),
-                Color(0xff335f5c),
+                Color(0xff1A3130),
+                Color(0xff080F0F),
               ],
               stops: <double>[0, 1],
             ),
@@ -60,7 +51,7 @@ class _FavoriteState extends State<Favorite> {
               Stack(
                 children: [
                   Container(
-                    height: 120,
+                    height: 110,
                     width: MediaQuery.of(context).size.width,
                     color: const Color(0XB311201F),
                     child: ListView(
@@ -88,9 +79,10 @@ class _FavoriteState extends State<Favorite> {
                                   ),
                                   hintText: "Titles, authors or topics . . . .",
                                   hintStyle:  const TextStyle(
-                                    fontWeight: FontWeight.normal,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'Quick Sand',
                                     color: Color(0xFF4E4E4E),
-                                    fontSize: 16
+                                    fontSize: 14
                                   ),
                                   prefixIcon: const Icon(Icons.search, size: 30,),
                                   prefixIconColor: const Color(0xFF4E4E4E)),
@@ -110,21 +102,22 @@ class _FavoriteState extends State<Favorite> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       'Favorites',
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w700,
+                          fontFamily: 'Quick Sand',
                           color: Colors.white
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Text(
-                      '8 Books',
-                      style: TextStyle(
+                      '${books.length.toString()} books',
+                      style: const TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Quicksand medium',
                           color: Colors.white
                       ),
                     )

@@ -79,7 +79,7 @@ class _ProfileState extends State<Profile> {
         ),
         title: const Text(
           "Profile",
-          style: TextStyle(fontSize: 26),
+          style: TextStyle(fontSize: 26,fontFamily: 'Quick Sand',fontWeight: FontWeight.w700),
         ),
         flexibleSpace: Container(
           color: const Color(0xff1F3B3A),
@@ -164,8 +164,8 @@ class _ProfileState extends State<Profile> {
                                       style: const TextStyle(
                                         fontSize: 22.0,
                                         color: Colors.white,
-                                        fontFamily: 'Quicksand',
-                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'Quick Sand',
+                                        fontWeight: FontWeight.w700,
                                       ),
                                     ),
                                   ),
@@ -383,6 +383,7 @@ class _ProfileState extends State<Profile> {
                                   ),
                                   TextFormField(
                                     initialValue: userData.phoneNumber,
+                                    keyboardType: TextInputType.number,
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,
@@ -513,8 +514,8 @@ class _ProfileState extends State<Profile> {
                                     style: const TextStyle(
                                       fontSize: 22.0,
                                       color: Colors.white,
-                                      fontFamily: 'Quicksand',
-                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Quick Sand',
+                                      fontWeight: FontWeight.w700,
                                     ),
                                   ),
                                 ),
@@ -542,9 +543,9 @@ class _ProfileState extends State<Profile> {
                                     child: const Text(
                                       'Edit Profile',
                                       style: TextStyle(
-                                        fontSize: 14,
+                                        fontSize: 15,
                                         fontFamily: 'Quicksand bold',
-                                        fontWeight: FontWeight.bold,
+                                        
                                       ),
                                     ),
                                   ),
