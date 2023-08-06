@@ -7,7 +7,12 @@ class BorrowInvoice extends StatefulWidget {
   final String bookName;
   final String pickUpDate;
   final String duration;
-  const BorrowInvoice({super.key, required this.currentDate, required this.bookName, required this.pickUpDate, required this.duration});
+  const BorrowInvoice(
+      {super.key,
+      required this.currentDate,
+      required this.bookName,
+      required this.pickUpDate,
+      required this.duration});
 
   @override
   State<BorrowInvoice> createState() => _BorrowInvoiceState();
@@ -176,10 +181,11 @@ class _BorrowInvoiceState extends State<BorrowInvoice> {
                 height: 42,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, PageTransition(
-                        child: const Wrapper(),
-                        type: PageTransitionType.fade
-                    ));
+                    Navigator.pushReplacement(
+                        context,
+                        PageTransition(
+                            child: const Wrapper(),
+                            type: PageTransitionType.fade));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xff01B58A),

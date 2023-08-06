@@ -127,6 +127,7 @@ class _FavoriteState extends State<Favorite> {
               SizedBox(
                 height: MediaQuery.of(context).size.height - 270,
                 child: ListView(
+                  physics: const BouncingScrollPhysics(),
                   children: books.map((book) => BookList(book: book)).toList(),
                 ),
               )
