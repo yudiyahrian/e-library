@@ -1,4 +1,3 @@
-import 'package:e_library/models/book.dart';
 import 'package:flutter/material.dart';
 import 'package:e_library/shared/books.dart';
 import 'package:e_library/shared/carousel.dart';
@@ -32,6 +31,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         child: ListView(
+          physics: const BouncingScrollPhysics(),
           children: [
             Column(
               children: [
@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         children: [
                           const Text(
-                            'News',
+                            'New',
                             style: TextStyle(
                                 fontFamily: 'Quick Sand',
                                 fontSize: 22,
@@ -330,12 +330,13 @@ class _HomePageState extends State<HomePage> {
                           margin: EdgeInsets.only(left: 8.0),
                           child: Column(
                             children: pageviewhistory
-                                .map((book) => PageViewHistoryList(bookHis: book))
+                                .map((book) =>
+                                    PageViewHistoryList(bookHis: book))
                                 .toList(),
                           ),
                         )
                       ]),
-                    ),                 
+                    ),
                     Container(
                       margin: EdgeInsets.only(left: 15.0),
                       child: Column(children: [
@@ -367,7 +368,8 @@ class _HomePageState extends State<HomePage> {
                           margin: EdgeInsets.only(left: 8.0),
                           child: Column(
                             children: pageviewfantasy
-                                .map((book) => PageViewFantasyList(bookFan: book))
+                                .map((book) =>
+                                    PageViewFantasyList(bookFan: book))
                                 .toList(),
                           ),
                         )
@@ -404,16 +406,16 @@ class _HomePageState extends State<HomePage> {
                           margin: EdgeInsets.only(left: 8.0),
                           child: Column(
                             children: pageviewadventure
-                                .map((book) => PageViewAdventureList(bookAdvent: book))
+                                .map((book) =>
+                                    PageViewAdventureList(bookAdvent: book))
                                 .toList(),
                           ),
                         )
                       ]),
                     ),
-                  
                   ]),
                 ),
-                
+
                 Stack(
                   children: [
                     Padding(
@@ -888,9 +890,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-              SizedBox(
-                height: 40.0,
-              )
+                SizedBox(
+                  height: 40.0,
+                )
               ],
             ),
           ],

@@ -31,6 +31,8 @@ class _ProductState extends State<Product> {
           ),
         ),
         child: ListView(
+          physics: const BouncingScrollPhysics(),
+
           children: [
             Stack(
               children: [

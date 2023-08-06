@@ -44,7 +44,7 @@ List<Book> books = [
   ),
   Book(
     image: 'images/book/home sweet loan.png',
-    title: 'Psychology of money',
+    title: 'Home Sweet Loan',
     author: 'Morgal Housell',
     description:
         'Kesuksesan dalam mengelola uang tidak selalu tentang apa yang Anda ketahui. Ini tentang bagaimana Anda berperilaku. Dan perilaku sulit untuk diajarkan, bahkan kepada orang yang sangat pintar sekalipun. Seorang genius yang kehilangan kendali atas emosinya bisa mengalami bencana keuangan. Sebaliknya, orang biasa tanpa pendidikan finansial bisa kaya jika mereka punya sejumlah keahlian terkait perilaku yang tidak berhubungan dengan ukuran kecerdasan formal.',
@@ -65,7 +65,7 @@ List<Book> books = [
       rating: '5.0'),
   Book(
       image: 'images/book/si anak spesial.png',
-      title: 'Percy Jackson',
+      title: 'Si Anak Spesial',
       author: 'Rick Diordan',
       description:
           'Aku adalah spesial. Aku sudah dikeluarkan dari sekolah berkali-kali, sebagian karena aku penyandang disleksia dan GPPH (Gangguan Pemusatan Perhatian dan Hiperaktif), sebagian lagi karena masalah sepertinya suka sekali mengejarku ke mana pun aku pergi. Yang lebih buruk lagi, aku ternyata demigod. Kalau menurutmu memiliki orang tua dewata itu menyenangkan, kau salah. Sebagai demigod, kami harus menjalani misi dan menjadi pahlawan, yang berarti kami selalu diburu monster, dibenci oleh kebanyakan dewa, dan seringnya mati muda.',
